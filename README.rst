@@ -1,0 +1,80 @@
+=====================
+bootstrap-progressbar
+=====================
+
+``bootstrap-progressbar`` is a jQuery_ plugin which extends the basic twitter-bootstrap_ progressbar. It provides the ability to animate the progressbar by adding Javascript in combination with the preexisting css transitions. Additionally you can display the current percent value inside the bar.
+
+.. _jQuery: http://jquery.com/
+.. _twitter-bootstrap: http://twitter.github.com/bootstrap/
+
+Useage
+======
+
+1. include ``bootstrap-progressbar.js``::
+
+    <script type="text/javascript" src="bootstrap-progressbar.js"></script>
+
+#. activate ``bootstrap-progressbar`` functionality on progressbars of your choice::
+
+    $(function() {
+        $('.progress .bar').progressbar();
+    });
+
+#. set the ``data-percentage`` attribute and **remove** the ``width`` style attribute (alternatively you can set it to 0)::
+
+    <div class="progress progress-striped">
+        <div class="bar" data-percentage="75"></div>
+    </div>
+
+Customization
+=============
+
+1. text and delay
+
+    simply add additional parameters when activating the script::
+
+        $(document).ready(function() {
+            $('.progress .bar').progressbar({
+                transition_delay: 300
+            ,   display_text: true
+            ,   refresh_speed: 50
+            ,   precision: 1
+            });
+        });
+
+    * ``transition_delay`` is the time in milliseconds until the animation starts
+    * ``display_text`` determines whether the text will be displayed
+    * ``refresh_speed`` is the time in milliseconds which will elapse between every text refresh
+    * ``precision`` is the amount of decimal places of the text
+
+#. to change the animation itself you have to overwrite either less or css
+
+    * less::
+
+        .progress .bar {
+          .transition(width 1.5s ease-in-out);
+        }
+
+    * css::
+
+        .progress .bar {
+            -webkit-transition: width 2s ease-in-out;
+            -moz-transition: width 2s ease-in-out;
+            -ms-transition: width 2s ease-in-out;
+            -o-transition: width 2s ease-in-out;
+            transition: width 2s ease-in-out;
+        }
+
+Demo
+====
+
+http://www.minddust.com/bootstrap-progressbar-demo/
+
+License
+=======
+
+Copyright 2012 minddust.com_
+
+.. _minddust.com: http://www.minddust.com/
+
+bootstrap-progressbar is published under Apache License, Version 2.0 (see LICENSE file).
