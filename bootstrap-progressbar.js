@@ -30,9 +30,18 @@
             var $this = this.element
                 , options = this.options
                 , percentage = $this.attr('data-percentage')
+                , amount_part = $this.attr('data-amount-part')
+                , amount_total = $this.attr('data-amout-total')
                 , callback
 
-            if ( !percentage ) return
+            if ( options.use_percentage && !percentage ) return
+            else if ( !options.use_percentage ) {
+                if ( !amount_part && !amount_total )
+                    return
+                else {
+                    percentage = Math.round(100 * amount_part / amount_total)
+                }
+            }
 
             if ( options.callback && typeof(options.callback) == 'function' ) callback = options.callback
             else callback = $.fn.progressbar.defaults.callback
@@ -47,7 +56,12 @@
                     parent_width = $this.parent().width()
                     current_percentage = Math.round(100 * $this.width() / parent_width)
 
-                    if ( options.display_text ) $this.text(current_percentage +'%')
+                    if ( options.display_text ) {
+                        if ( options.use_percentage )
+                            $this.text(current_percentage +'%')
+                        else
+                            $this.text(amount_part + ' / ' + amount_total)
+                    }
                     if ( current_percentage >= percentage ) clearInterval(progress)
 
                     callback(current_percentage)
@@ -74,6 +88,7 @@
         transition_delay: 300
         ,   refresh_speed: 50
         ,   display_text: true
+        ,   use_percentage: true
         ,   callback: $.noop
     }
 
