@@ -58,7 +58,10 @@
                     current_percentage = Math.round(100 * $this.width() / parent_width)
                     current_value = Math.round($this.width() / parent_width * amount_total)
 
-                    if ( current_value > amount_part ) current_value = amount_part
+                    if ( current_percentage >= percentage ) {
+                        current_value = amount_part
+                        clearInterval(progress)
+                    }
 
                     if ( options.display_text ) {
                         if ( options.use_percentage )
@@ -66,7 +69,6 @@
                         else
                             $this.text(current_value + ' / ' + amount_total)
                     }
-                    if ( current_percentage >= percentage ) clearInterval(progress)
 
                     callback(current_percentage)
                 }, options.refresh_speed)
