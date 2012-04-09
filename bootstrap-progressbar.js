@@ -9,7 +9,7 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  * ======================================================== */
 
-!function( $ ){
+function( $ ){
 
     "use strict"
 
@@ -30,26 +30,30 @@
             var $this = this.element
                 , options = this.options
                 , percentage = $this.attr('data-percentage')
+                , callback
 
             if ( !percentage ) return
+
+            if ( options.callback && typeof(options.callback) == 'function' ) callback = options.callback
+            else callback = $.fn.progressbar.defaults.callback
 
             setTimeout(function() {
                 $this.css('width', percentage+'%')
 
-                if ( options.display_text ) {
-                    var current_percentage
-                        , parent_width
-                        , precision_helper = Math.pow(10, options.precision)
+                var current_percentage
+                    , parent_width
+                    , precision_helper = Math.pow(10, options.precision)
 
-                    var progress = setInterval(function() {
-                        parent_width = $this.parent().width();
-                        current_percentage = Math.round(100 * $this.width() / parent_width * precision_helper) / precision_helper
-                        if (current_percentage >= percentage) {
-                            clearInterval(progress)
-                        }
-                        $this.text(current_percentage+'%')
-                    }, options.refresh_speed)
-                }
+                var progress = setInterval(function() {
+                    parent_width = $this.parent().width()
+                    current_percentage = Math.round(100 * $this.width() / parent_width * precision_helper) / precision_helper
+
+                    if ( current_percentage >= percentage ) clearInterval(progress)
+                    if ( options.display_text ) $this.text(current_percentage+'%')
+
+                    callback(current_percentage)
+                }, options.refresh_speed)
+
             }, options.transition_delay)
         }
     }
@@ -72,6 +76,7 @@
         ,   display_text: true
         ,   refresh_speed: 50
         ,   precision: 1
+        ,   callback: $.noop
     }
 
     $.fn.progressbar.Constructor = Progressbar
