@@ -36,15 +36,15 @@ Customization
         $(document).ready(function() {
             $('.progress .bar').progressbar({
                 transition_delay: 300
-            ,   display_text: true
             ,   refresh_speed: 50
+            ,   display_text: true
             ,   callback: doSomethingCool( current_percentage ) { .. }
             });
         });
 
     * ``transition_delay`` is the time in milliseconds until the animation starts
+    * ``refresh_speed`` is the time in milliseconds which will elapse between every text refresh / callback call
     * ``display_text`` determines whether the text will be displayed
-    * ``refresh_speed`` is the time in milliseconds which will elapse between every text refresh
     * ``callback`` hook where you can grab the actual percentage value
 
 #. to change the animation itself you have to overwrite either less or css

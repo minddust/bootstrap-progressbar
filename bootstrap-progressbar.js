@@ -72,8 +72,8 @@
 
     $.fn.progressbar.defaults = {
         transition_delay: 300
-        ,   display_text: true
         ,   refresh_speed: 50
+        ,   display_text: true
         ,   callback: $.noop
     }
 
