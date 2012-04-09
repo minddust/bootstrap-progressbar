@@ -31,7 +31,7 @@
                 , options = this.options
                 , percentage = $this.attr('data-percentage')
                 , amount_part = $this.attr('data-amount-part')
-                , amount_total = $this.attr('data-amout-total')
+                , amount_total = $this.attr('data-amount-total')
                 , callback
 
             if ( options.use_percentage && !percentage ) return
@@ -50,17 +50,21 @@
                 $this.css('width', percentage+'%')
 
                 var current_percentage
+                    , current_value
                     , parent_width
 
                 var progress = setInterval(function() {
                     parent_width = $this.parent().width()
                     current_percentage = Math.round(100 * $this.width() / parent_width)
+                    current_value = Math.round($this.width() / parent_width * amount_total)
+
+                    if ( current_value > amount_part ) current_value = amount_part
 
                     if ( options.display_text ) {
                         if ( options.use_percentage )
                             $this.text(current_percentage +'%')
                         else
-                            $this.text(amount_part + ' / ' + amount_total)
+                            $this.text(current_value + ' / ' + amount_total)
                     }
                     if ( current_percentage >= percentage ) clearInterval(progress)
 
