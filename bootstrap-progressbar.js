@@ -14,7 +14,7 @@
     "use strict"
 
     /* PROGRESSBAR CLASS DEFINITION
-     * ==================== */
+     * ============================ */
 
     var Progressbar = function ( element, options ) {
         this.element = $(element)
@@ -55,7 +55,7 @@
     }
 
     /* PROGRESSBAR PLUGIN DEFINITION
-     * ===================== */
+     * ============================= */
 
     $.fn.progressbar = function ( option ) {
         return this.each(function () {
