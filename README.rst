@@ -20,7 +20,7 @@ Useage
         $('.progress .bar').progressbar();
     });
 
-#. set the ``data`` attribute and **remove** the ``width`` style attribute (alternatively you can set it to 0)::
+#. set the ``data`` attribute and **remove** the ``width`` style attribute (alternatively you can set it to 0)
 
     1. ``data-percentage``::
 
