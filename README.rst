@@ -20,11 +20,19 @@ Useage
         $('.progress .bar').progressbar();
     });
 
-#. set the ``data-percentage`` attribute and **remove** the ``width`` style attribute (alternatively you can set it to 0)::
+#. set the ``data`` attribute and **remove** the ``width`` style attribute (alternatively you can set it to 0)::
 
-    <div class="progress progress-info">
-        <div class="bar" data-percentage="75"></div>
-    </div>
+    1. ``data-percentage``::
+
+        <div class="progress progress-info">
+            <div class="bar" data-percentage="75"></div>
+        </div>
+
+    #. ``data-amount-part`` and ``data-amount-total``::
+
+         <div class="progress progress-info">
+             <div class="bar" data-amount-part="1337" data-amount-total="9000"></div>
+         </div>
 
 Customization
 =============
@@ -38,6 +46,7 @@ Customization
                 transition_delay: 300
             ,   refresh_speed: 50
             ,   display_text: true
+            ,   use_percentage: true
             ,   callback: doSomethingCool( current_percentage ) { .. }
             });
         });
@@ -45,6 +54,7 @@ Customization
     * ``transition_delay`` is the time in milliseconds until the animation starts
     * ``refresh_speed`` is the time in milliseconds which will elapse between every text refresh / callback call
     * ``display_text`` determines whether the text will be displayed
+    * ``use_percentage`` determines whether the text will be displayed in percent or amount
     * ``callback`` hook where you can grab the actual percentage value
 
 #. to change the animation itself you have to overwrite either less or css
