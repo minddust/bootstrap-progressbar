@@ -42,14 +42,13 @@
 
                 var current_percentage
                     , parent_width
-                    , precision_helper = Math.pow(10, options.precision)
 
                 var progress = setInterval(function() {
                     parent_width = $this.parent().width()
-                    current_percentage = Math.round(100 * $this.width() / parent_width * precision_helper) / precision_helper
+                    current_percentage = Math.round(100 * $this.width() / parent_width)
 
+                    if ( options.display_text ) $this.text(current_percentage +'%')
                     if ( current_percentage >= percentage ) clearInterval(progress)
-                    if ( options.display_text ) $this.text(current_percentage+'%')
 
                     callback(current_percentage)
                 }, options.refresh_speed)
@@ -75,7 +74,6 @@
         transition_delay: 300
         ,   display_text: true
         ,   refresh_speed: 50
-        ,   precision: 1
         ,   callback: $.noop
     }
 
