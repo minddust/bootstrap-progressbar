@@ -22,7 +22,7 @@ Useage
 
 #. set the ``data-percentage`` attribute and **remove** the ``width`` style attribute (alternatively you can set it to 0)::
 
-    <div class="progress progress-striped">
+    <div class="progress progress-info">
         <div class="bar" data-percentage="75"></div>
     </div>
 
