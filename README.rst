@@ -38,14 +38,14 @@ Customization
                 transition_delay: 300
             ,   display_text: true
             ,   refresh_speed: 50
-            ,   precision: 1
+            ,   callback: doSomethingCool( current_percentage ) { .. }
             });
         });
 
     * ``transition_delay`` is the time in milliseconds until the animation starts
     * ``display_text`` determines whether the text will be displayed
     * ``refresh_speed`` is the time in milliseconds which will elapse between every text refresh
-    * ``precision`` is the amount of decimal places of the text
+    * ``callback`` hook where you can grab the actual percentage value
 
 #. to change the animation itself you have to overwrite either less or css
 
