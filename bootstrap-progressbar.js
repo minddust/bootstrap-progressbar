@@ -30,7 +30,6 @@
             var $this = this.element
                 , options = this.options
                 , percentage = $this.attr('data-percentage')
-                , parent_width = $this.parent().width()
 
             if ( !percentage ) return
 
@@ -39,10 +38,12 @@
 
                 if ( options.display_text ) {
                     var current_percentage
-                        , precision_helper = Math.pow(10, options.precision);
+                        , parent_width
+                        , precision_helper = Math.pow(10, options.precision)
 
                     var progress = setInterval(function() {
-                        current_percentage = Math.round($this.width() * 100 / parent_width * precision_helper) / precision_helper
+                        parent_width = $this.parent().width();
+                        current_percentage = Math.round(100 * $this.width() / parent_width * precision_helper) / precision_helper
                         if (current_percentage >= percentage) {
                             clearInterval(progress)
                         }
