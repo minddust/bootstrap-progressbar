@@ -59,6 +59,7 @@
                     current_value = Math.round($this.width() / parent_width * amount_total)
 
                     if ( current_percentage >= percentage ) {
+                        current_percentage = percentage
                         current_value = amount_part
                         clearInterval(progress)
                     }
