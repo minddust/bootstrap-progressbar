@@ -79,6 +79,7 @@ Demo
 ====
 
 http://www.minddust.com/bootstrap-progressbar-demo/
+http://www.minddust.com/bootstrap-progressbar-demo-min/ (minified version)
 
 License
 =======
