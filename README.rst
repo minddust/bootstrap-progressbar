@@ -16,7 +16,7 @@ Useage
 
 #. activate ``bootstrap-progressbar`` functionality on progressbars of your choice::
 
-    $(function() {
+    $(document).ready(function() {
         $('.progress .bar').progressbar();
     });
 
