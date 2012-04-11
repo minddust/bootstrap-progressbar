@@ -55,7 +55,7 @@ Customization
     * ``transition_delay`` is the time in milliseconds until the animation starts
     * ``refresh_speed`` is the time in milliseconds which will elapse between every text refresh / callback call
     * ``display_text`` determines whether the text will be displayed
-    
+
         * ``0`` no text
         * ``1`` text on filled bar
         * ``2`` text on center
@@ -85,7 +85,6 @@ Demo
 ====
 
 * http://www.minddust.com/bootstrap-progressbar-demo/
-* http://www.minddust.com/bootstrap-progressbar-demo-min/ (minified version)
 
 License
 =======
