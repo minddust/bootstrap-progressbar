@@ -53,6 +53,9 @@
                     'position': 'absolute'
                 ,   'float': 'left'
                 ,   'overflow': 'hidden'
+                ,   '-webkit-border-radius': options.border_radius
+                ,   '-moz-border-radius': options.border_radius
+                ,   'border-radius': options.border_radius
                 })
                 $parent.prepend('<span class="progressbar-back-text" style="position:absolute;width:100%;text-align:center"></span>')
                 $this.prepend('<span class="progressbar-front-text" style="display:block;text-align:center"></span>')
@@ -121,6 +124,7 @@
         ,   refresh_speed: 50
         ,   display_text: $.fn.progressbar.display_text.none
         ,   use_percentage: true
+        ,   border_radius: '4px'
         ,   callback: $.noop
     }
 
