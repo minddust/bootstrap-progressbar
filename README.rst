@@ -45,7 +45,7 @@ Customization
             $('.progress .bar').progressbar({
                 transition_delay: 300
             ,   refresh_speed: 50
-            ,   display_text: 0
+            ,   display_text: 2
             ,   use_percentage: true
             ,   border_radius: '4px'
             ,   callback: doSomethingCool( current_percentage ) { .. }
@@ -55,6 +55,7 @@ Customization
     * ``transition_delay`` is the time in milliseconds until the animation starts
     * ``refresh_speed`` is the time in milliseconds which will elapse between every text refresh / callback call
     * ``display_text`` determines whether the text will be displayed
+    
         * ``0`` no text
         * ``1`` text on filled bar
         * ``2`` text on center
