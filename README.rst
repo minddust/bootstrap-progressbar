@@ -56,9 +56,9 @@ Customization
     * ``refresh_speed`` is the time in milliseconds which will elapse between every text refresh / callback call
     * ``display_text`` determines whether the text will be displayed
 
-        * ``0`` no text `this mode doesn't change any css / html`
-        * ``1`` text on filled bar `this mode doesn't change any css / html`
-        * ``2`` text on center `this mode changes css / html due to styling requirements`
+        * ``0`` no text *this mode doesn't change any css / html*
+        * ``1`` text on filled bar *this mode doesn't change any css / html*
+        * ``2`` text on center *this mode changes css / html due to styling requirements*
     * ``use_percentage`` determines whether the text will be displayed in percent or amount
     * ``border_radius`` hook to change the border radius of the progressbar (only in center text mode - default: 4px)
     * ``callback`` hook where you can grab the actual percentage value
