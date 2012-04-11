@@ -1,5 +1,5 @@
 /* ========================================================
- * bootstrap-progressbar v0.3.0
+ * bootstrap-progressbar v0.4.0
  * ========================================================
  * Copyright 2012 minddust.com
  *
@@ -28,6 +28,7 @@
 
         , transition: function () {
             var $this = this.element
+                , $parent = $this.parent()
                 , options = this.options
                 , percentage = $this.attr('data-percentage')
                 , amount_part = $this.attr('data-amount-part')
@@ -46,12 +47,28 @@
             if ( options.callback && typeof(options.callback) == 'function' ) callback = options.callback
             else callback = $.fn.progressbar.defaults.callback
 
+            if ( options.display_text ===  $.fn.progressbar.display_text.center ) {
+                $parent.css('position', 'relative')
+                $this.css({
+                    'position': 'absolute'
+                ,   'float': 'left'
+                ,   'overflow': 'hidden'
+                })
+                $parent.prepend('<span class="progressbar-back-text" style="position:absolute;width:100%;text-align:center"></span>')
+                $this.prepend('<span class="progressbar-front-text" style="display:block;text-align:center"></span>')
+                var $back = $parent.find('.progressbar-back-text')
+                    , $front = $parent.find('.progressbar-front-text')
+                $front.css('width', $parent.css('width'))
+                $(window).resize(function() { $front.css('width', $parent.css('width')) })
+            }
+
             setTimeout(function() {
                 $this.css('width', percentage+'%')
 
                 var current_percentage
                     , current_value
                     , parent_width
+                    , text
 
                 var progress = setInterval(function() {
                     parent_width = $this.parent().width()
@@ -64,11 +81,13 @@
                         clearInterval(progress)
                     }
 
-                    if ( options.display_text ) {
-                        if ( options.use_percentage )
-                            $this.text(current_percentage +'%')
-                        else
-                            $this.text(current_value + ' / ' + amount_total)
+                    if ( options.use_percentage ) text = current_percentage +'%'
+                    else text = current_value + ' / ' + amount_total
+
+                    if ( options.display_text ===  $.fn.progressbar.display_text.filled ) $this.text(text)
+                    else if ( options.display_text ===  $.fn.progressbar.display_text.center ) {
+                        $front.text(text)
+                        $back.text(text)
                     }
 
                     callback(current_percentage)
@@ -91,10 +110,16 @@
         })
     }
 
+    $.fn.progressbar.display_text = {
+        none: 0
+        ,   filled: 1
+        ,   center: 2
+    }
+
     $.fn.progressbar.defaults = {
         transition_delay: 300
         ,   refresh_speed: 50
-        ,   display_text: true
+        ,   display_text: $.fn.progressbar.display_text.none
         ,   use_percentage: true
         ,   callback: $.noop
     }
