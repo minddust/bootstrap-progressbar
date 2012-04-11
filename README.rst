@@ -8,7 +8,7 @@ bootstrap-progressbar - 0.4.0
 .. _twitter-bootstrap: http://twitter.github.com/bootstrap/
 
 Usage
-======
+=====
 
 1. include ``bootstrap-progressbar.js``::
 
