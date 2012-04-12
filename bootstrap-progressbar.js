@@ -9,17 +9,17 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  * ======================================================== */
 
-function($){
+!function( $ ){
 
-    "use strict";
+    "use strict"
 
     /* PROGRESSBAR CLASS DEFINITION
      * ============================ */
 
-    var Progressbar = function (element, options) {
-        this.element = $(element);
-        this.options = $.extend({}, $.fn.progressbar.defaults, options);
-        this.transition();
+    var Progressbar = function ( element, options ) {
+        this.element = $(element)
+        this.options = $.extend({}, $.fn.progressbar.defaults, options)
+        this.transition()
     };
 
     Progressbar.prototype = {
