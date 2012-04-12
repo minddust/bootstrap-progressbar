@@ -7,6 +7,11 @@ bootstrap-progressbar - 0.4.1
 .. _jQuery: http://jquery.com/
 .. _twitter-bootstrap: http://twitter.github.com/bootstrap/
 
+Demo
+====
+
+* http://minddust.github.com/bootstrap-progressbar/
+
 Usage
 =====
 
@@ -86,11 +91,6 @@ Customization
             -o-transition: width 2s ease-in-out;
             transition: width 2s ease-in-out;
         }
-
-Demo
-====
-
-* http://www.minddust.com/bootstrap-progressbar-demo/
 
 License
 =======
