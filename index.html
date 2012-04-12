@@ -1,1 +1,326 @@
-test :)
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>bootstrap-progressbar.js 0.4.1 - demo</title>
+
+    <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap-progressbar.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap-2.0.2.custom.css">
+
+    <style type="text/css">
+        .progress .bar.two-sec-ease-in-out {
+            -webkit-transition: width 2s ease-in-out;
+            -moz-transition: width 2s ease-in-out;
+            -ms-transition: width 2s ease-in-out;
+            -o-transition: width 2s ease-in-out;
+            transition: width 2s ease-in-out;
+        }
+        .progress .bar.four-sec-ease-in-out {
+            -webkit-transition: width 4s ease-in-out;
+            -moz-transition: width 4s ease-in-out;
+            -ms-transition: width 4s ease-in-out;
+            -o-transition: width 4s ease-in-out;
+            transition: width 4s ease-in-out;
+        }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            $('.progress .bar.no-text-1').progressbar();
+            $('.progress .bar.text-filled-1').progressbar({
+                display_text: 1
+            });
+            $('.progress .bar.text-center-1').progressbar({
+                display_text: 2
+            });
+            $('.progress .bar.no-text-2').progressbar({
+                transition_delay: 1500
+            });
+            $('.progress .bar.text-filled-2').progressbar({
+                transition_delay: 1500,
+                display_text: 1
+            });
+            $('.progress .bar.text-center-2').progressbar({
+                transition_delay: 1500,
+                display_text: 2
+            });
+            $('.progress .bar.no-text-3').progressbar({
+                transition_delay: 4000,
+                refresh_speed: 200,
+                use_percentage: false
+            });
+            $('.progress .bar.text-filled-3').progressbar({
+                transition_delay: 4000,
+                refresh_speed: 200,
+                use_percentage: false,
+                display_text: 1
+            });
+            $('.progress .bar.text-center-3').progressbar({
+                transition_delay: 4000,
+                refresh_speed: 200,
+                use_percentage: false,
+                display_text: 2
+            });
+            $('.progress .bar.text-center-4-1').progressbar({
+                transition_delay: 8500,
+                display_text: 2,
+                update: function(current_percentage) { $('#update-1').text(current_percentage); },
+                done: function(current_percentage) { $('#done-1').text('done!'); }
+            });
+            $('.progress .bar.text-center-4-2').progressbar({
+                transition_delay: 8500,
+                display_text: 2,
+                update: function(current_percentage) { $('#update-2').text(current_percentage); },
+                done: function(current_percentage) { $('#done-2').text('done!'); }
+            });
+            $('.progress .bar.text-center-4-3').progressbar({
+                transition_delay: 8500,
+                display_text: 2,
+                update: function(current_percentage) { $('#update-3').text(current_percentage); },
+                done: function(current_percentage) { $('#done-3').text('done!'); }
+            });
+            $('.progress .bar.text-center-4-4').progressbar({
+                transition_delay: 8500,
+                display_text: 2,
+                update: function(current_percentage) { $('#update-4').text(current_percentage); },
+                done: function(current_percentage) { $('#done-4').text('done!'); }
+            });
+            $('.progress .bar.text-center-5-1').progressbar({
+                transition_delay: 13000,
+                use_percentage: false,
+                display_text: 2,
+                fail: function(error_message) { $('#fail-1').text(error_message); }
+            });
+            $('.progress .bar.text-center-5-2').progressbar({
+                transition_delay: 13000,
+                display_text: 2,
+                fail: function(error_message) { $('#fail-2').text(error_message); }
+            });
+        });
+    </script>
+</head>
+<body>
+<a href="http://github.com/minddust"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>
+<div class="container">
+<div class="row">
+    <div class="span12">
+        <h1>bootstrap-progressbar 0.4.0</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="span3">
+        <h3>Options</h3>
+        <ul>
+            <li>default</li>
+        </ul>
+    </div>
+    <div class="span3">
+        <h3>without text</h3>
+        <div class="progress progress-info">
+            <div class="bar no-text-1" data-percentage="25"></div>
+        </div>
+        <div class="progress progress-success">
+            <div class="bar no-text-1" data-percentage="50"></div>
+        </div>
+        <div class="progress progress-warning">
+            <div class="bar no-text-1" data-percentage="75"></div>
+        </div>
+        <div class="progress progress-danger">
+            <div class="bar no-text-1" data-percentage="100"></div>
+        </div>
+    </div>
+    <div class="span3">
+        <h3>text on filled bar</h3>
+        <div class="progress progress-info">
+            <div class="bar text-filled-1" data-percentage="25"></div>
+        </div>
+        <div class="progress progress-success">
+            <div class="bar text-filled-1" data-percentage="50"></div>
+        </div>
+        <div class="progress progress-warning">
+            <div class="bar text-filled-1" data-percentage="75"></div>
+        </div>
+        <div class="progress progress-danger">
+            <div class="bar text-filled-1" data-percentage="100"></div>
+        </div>
+    </div>
+    <div class="span3">
+        <h3>text on center</h3>
+        <div class="progress progress-info">
+            <div class="bar text-center-1" data-percentage="25"></div>
+        </div>
+        <div class="progress progress-success">
+            <div class="bar text-center-1" data-percentage="49"></div>
+        </div>
+        <div class="progress progress-warning">
+            <div class="bar text-center-1" data-percentage="52"></div>
+        </div>
+        <div class="progress progress-danger">
+            <div class="bar text-center-1" data-percentage="75"></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="span3">
+        <h3>Options</h3>
+        <ul>
+            <li>transition_delay: 1500</li>
+            <li>transition: width 2s ease-in-out</li>
+        </ul>
+    </div>
+    <div class="span3">
+        <h3>without text</h3>
+        <div class="progress progress-info">
+            <div class="bar no-text-2 two-sec-ease-in-out" data-percentage="25"></div>
+        </div>
+        <div class="progress progress-success">
+            <div class="bar no-text-2 two-sec-ease-in-out" data-percentage="50"></div>
+        </div>
+        <div class="progress progress-warning">
+            <div class="bar no-text-2 two-sec-ease-in-out" data-percentage="75"></div>
+        </div>
+        <div class="progress progress-danger">
+            <div class="bar no-text-2 two-sec-ease-in-out" data-percentage="100"></div>
+        </div>
+    </div>
+    <div class="span3">
+        <h3>text on filled bar</h3>
+        <div class="progress progress-info">
+            <div class="bar text-filled-2 two-sec-ease-in-out" data-percentage="25"></div>
+        </div>
+        <div class="progress progress-success">
+            <div class="bar text-filled-2 two-sec-ease-in-out" data-percentage="50"></div>
+        </div>
+        <div class="progress progress-warning">
+            <div class="bar text-filled-2 two-sec-ease-in-out" data-percentage="75"></div>
+        </div>
+        <div class="progress progress-danger">
+            <div class="bar text-filled-2 two-sec-ease-in-out" data-percentage="100"></div>
+        </div>
+    </div>
+    <div class="span3">
+        <h3>text on center</h3>
+        <div class="progress progress-info">
+            <div class="bar text-center-2 two-sec-ease-in-out" data-percentage="25"></div>
+        </div>
+        <div class="progress progress-success">
+            <div class="bar text-center-2 two-sec-ease-in-out" data-percentage="49"></div>
+        </div>
+        <div class="progress progress-warning">
+            <div class="bar text-center-2 two-sec-ease-in-out" data-percentage="52"></div>
+        </div>
+        <div class="progress progress-danger">
+            <div class="bar text-center-2 two-sec-ease-in-out" data-percentage="75"></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="span3">
+        <h3>Options</h3>
+        <ul>
+            <li>transition_delay: 4000</li>
+            <li>refresh_speed: 200</li>
+            <li>use_percentage: false</li>
+            <li>transition: width 4s ease-in-out</li>
+        </ul>
+    </div>
+    <div class="span3">
+        <h3>without text</h3>
+        <div class="progress progress-info">
+            <div class="bar no-text-3 four-sec-ease-in-out" data-amount-part="1337" data-amount-total="9000"></div>
+        </div>
+        <div class="progress progress-success">
+            <div class="bar no-text-3 four-sec-ease-in-out" data-amount-part="2500" data-amount-total="5000"></div>
+        </div>
+        <div class="progress progress-warning">
+            <div class="bar no-text-3 four-sec-ease-in-out" data-amount-part="75" data-amount-total="100"></div>
+        </div>
+        <div class="progress progress-danger">
+            <div class="bar no-text-3 four-sec-ease-in-out" data-amount-part="10" data-amount-total="10"></div>
+        </div>
+    </div>
+    <div class="span3">
+        <h3>text on filled bar</h3>
+        <div class="progress progress-info">
+            <div class="bar text-filled-3 four-sec-ease-in-out" data-amount-part="25" data-amount-total="100"></div>
+        </div>
+        <div class="progress progress-success">
+            <div class="bar text-filled-3 four-sec-ease-in-out" data-amount-part="2500" data-amount-total="5000"></div>
+        </div>
+        <div class="progress progress-warning">
+            <div class="bar text-filled-3 four-sec-ease-in-out" data-amount-part="75" data-amount-total="100"></div>
+        </div>
+        <div class="progress progress-danger">
+            <div class="bar text-filled-3 four-sec-ease-in-out" data-amount-part="10" data-amount-total="10"></div>
+        </div>
+    </div>
+    <div class="span3">
+        <h3>text on center</h3>
+        <div class="progress progress-info">
+            <div class="bar text-center-3 four-sec-ease-in-out" data-amount-part="1337" data-amount-total="9000"></div>
+        </div>
+        <div class="progress progress-success">
+            <div class="bar text-center-3 four-sec-ease-in-out" data-amount-part="240" data-amount-total="500"></div>
+        </div>
+        <div class="progress progress-warning">
+            <div class="bar text-center-3 four-sec-ease-in-out" data-amount-part="333" data-amount-total="600"></div>
+        </div>
+        <div class="progress progress-danger">
+            <div class="bar text-center-3 four-sec-ease-in-out" data-amount-part="7" data-amount-total="10"></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="span3">
+        <h3>Options</h3>
+        <ul>
+            <li>transition_delay: 8500</li>
+            <li>transition: width 4s ease-in-out</li>
+            <li>update: <span id="update-1"></span> <span id="done-1"></span></li>
+            <li>update: <span id="update-2"></span> <span id="done-2"></span></li>
+            <li>update: <span id="update-3"></span> <span id="done-3"></span></li>
+            <li>update: <span id="update-4"></span> <span id="done-4"></span></li>
+        </ul>
+    </div>
+    <div class="span9">
+        <h3>text on center</h3>
+        <div class="progress progress-info">
+            <div class="bar text-center-4-1 four-sec-ease-in-out" data-percentage="25"></div>
+        </div>
+        <div class="progress progress-success">
+            <div class="bar text-center-4-2 four-sec-ease-in-out" data-percentage="50"></div>
+        </div>
+        <div class="progress progress-warning">
+            <div class="bar text-center-4-3 four-sec-ease-in-out" data-percentage="75"></div>
+        </div>
+        <div class="progress progress-danger">
+            <div class="bar text-center-4-4 four-sec-ease-in-out" data-percentage="100"></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="span3">
+        <h3>Options</h3>
+        <ul>
+            <li>transition_delay: 13000</li>
+            <li>transition: width 4s ease-in-out</li>
+            <li>wrong data attributes set</li><br>
+            <li>bar1: <span id="fail-1" style="font-weight: bold; color: red"></span></li>
+            <li>bar2: <span id="fail-2" style="font-weight: bold; color: red"></span></li>
+        </ul>
+    </div>
+    <div class="span9">
+        <h3>text on center</h3>
+        <div class="progress progress-info">
+            <div class="bar text-center-5-1 four-sec-ease-in-out" data-percentage="25"></div>
+        </div>
+        <div class="progress progress-success">
+            <div class="bar text-center-5-2 four-sec-ease-in-out" data-amount-part="333" data-amount-total="600"></div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
