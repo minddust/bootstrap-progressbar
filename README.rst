@@ -48,7 +48,9 @@ Customization
             ,   display_text: 2
             ,   use_percentage: true
             ,   border_radius: '4px'
-            ,   callback: doSomethingCool( current_percentage ) { .. }
+            ,   update: doSomethingCool( current_percentage ) { .. }
+            ,   done: doSomethingCool( ) { .. }
+            ,   fail: doSomethingCool( error_message ) { .. }
             });
         });
 
@@ -63,7 +65,9 @@ Customization
     * ``border_radius`` hook to change the border radius of the progressbar
 
         * **you only have to set this if you are using centered text AND have overwritten the default bootstrap value**
-    * ``callback`` hook where you can grab the actual percentage value
+    * ``update`` hook where you can grab the actual percentage value
+    * ``done`` hook which indicates when progressbar is filled to the given value
+    * ``fail`` hook where you can grab an error message when something went wrong
 
 #. to change the animation itself you have to overwrite either less or css
 
