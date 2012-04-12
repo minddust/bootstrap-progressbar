@@ -1,5 +1,5 @@
 /* ========================================================
- * bootstrap-progressbar v0.4.0
+ * bootstrap-progressbar v0.4.1
  * ========================================================
  * Copyright 2012 minddust.com
  *
@@ -33,19 +33,26 @@
                 , percentage = $this.attr('data-percentage')
                 , amount_part = $this.attr('data-amount-part')
                 , amount_total = $this.attr('data-amount-total')
-                , callback
+                , update
+                , done
+                , fail
 
-            if ( options.use_percentage && !percentage ) return
-            else if ( !options.use_percentage ) {
-                if ( !amount_part && !amount_total )
-                    return
-                else {
-                    percentage = Math.round(100 * amount_part / amount_total)
-                }
+            update = ( options.update && typeof(options.update) == 'function' ) ? options.update : $.fn.progressbar.defaults.update
+            done = ( options.done && typeof(options.done) == 'function' ) ? options.done : $.fn.progressbar.defaults.done
+            fail = ( options.fail && typeof(options.fail) == 'function' ) ? options.fail : $.fn.progressbar.defaults.fail
+
+            if ( options.use_percentage && !percentage ) {
+                fail("bootstrap-progressbar: you can't use percentage without data-percentage being set")
+                return
             }
-
-            if ( options.callback && typeof(options.callback) == 'function' ) callback = options.callback
-            else callback = $.fn.progressbar.defaults.callback
+            else if ( !options.use_percentage ) {
+                if ( !amount_part && !amount_total ) {
+                    fail("bootstrap-progressbar: you can't use values without data-amount-part and data-amount-total being set")
+                    return
+                }
+                else
+                    percentage = Math.round(100 * amount_part / amount_total)
+            }
 
             if ( options.display_text ===  $.fn.progressbar.display_text.center ) {
                 $parent.css('position', 'relative')
@@ -62,7 +69,7 @@
                 var $back = $parent.find('.progressbar-back-text')
                     , $front = $parent.find('.progressbar-front-text')
                 $front.css('width', $parent.css('width'))
-                $(window).resize(function() { $front.css('width', $parent.css('width')) })
+                $(window).resize(function() { $front.css('width', $parent.css('width')) }) // normal resizing would brick the structure because width is in px
             }
 
             setTimeout(function() {
@@ -70,30 +77,35 @@
 
                 var current_percentage
                     , current_value
+                    , this_width
                     , parent_width
                     , text
 
                 var progress = setInterval(function() {
-                    parent_width = $this.parent().width()
-                    current_percentage = Math.round(100 * $this.width() / parent_width)
-                    current_value = Math.round($this.width() / parent_width * amount_total)
+                    this_width = $this.width()
+                    parent_width = $parent.width()
+                    current_percentage = Math.round(100 * this_width / parent_width)
+                    current_value = Math.round(this_width / parent_width * amount_total)
 
                     if ( current_percentage >= percentage ) {
                         current_percentage = percentage
                         current_value = amount_part
+                        done()
                         clearInterval(progress)
                     }
 
-                    if ( options.use_percentage ) text = current_percentage +'%'
-                    else text = current_value + ' / ' + amount_total
+                    if ( options.display_text !== $.fn.progressbar.display_text.none ) {
+                        text = ( options.use_percentage ) ? (current_percentage +'%') : (current_value + ' / ' + amount_total)
 
-                    if ( options.display_text ===  $.fn.progressbar.display_text.filled ) $this.text(text)
-                    else if ( options.display_text ===  $.fn.progressbar.display_text.center ) {
-                        $front.text(text)
-                        $back.text(text)
+                        if ( options.display_text ===  $.fn.progressbar.display_text.filled )
+                            $this.text(text)
+                        else if ( options.display_text ===  $.fn.progressbar.display_text.center ) {
+                            $front.text(text)
+                            $back.text(text)
+                        }
                     }
 
-                    callback(current_percentage)
+                    update(current_percentage)
                 }, options.refresh_speed)
 
             }, options.transition_delay)
@@ -125,7 +137,9 @@
         ,   display_text: $.fn.progressbar.display_text.none
         ,   use_percentage: true
         ,   border_radius: '4px'
-        ,   callback: $.noop
+        ,   update: $.noop
+        ,   done: $.noop
+        ,   fail: $.noop
     }
 
     $.fn.progressbar.Constructor = Progressbar
