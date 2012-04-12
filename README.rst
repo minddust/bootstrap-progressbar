@@ -60,7 +60,9 @@ Customization
         * ``1`` **text on filled bar** *(this mode doesn't change any css / html)*
         * ``2`` **text on center** *(this mode changes css / html due to styling requirements)*
     * ``use_percentage`` determines whether the text will be displayed in percent or amount
-    * ``border_radius`` hook to change the border radius of the progressbar (only in center text mode - default: 4px)
+    * ``border_radius`` hook to change the border radius of the progressbar
+
+        * **you only have to set this if you are using centered text AND overwrite the default bootstrap value**
     * ``callback`` hook where you can grab the actual percentage value
 
 #. to change the animation itself you have to overwrite either less or css
