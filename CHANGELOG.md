@@ -1,8 +1,6 @@
-=========
-Changelog
-=========
+# Changelog
 
-0.4.2
-=====
+### 0.4.2
 
-* started changelog
+  * started changelog
+  * switched to github markdown
