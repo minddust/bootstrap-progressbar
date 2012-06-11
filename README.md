@@ -22,7 +22,7 @@
     });
     ```
 
-3. set the `data` attribute
+3. set the `data` attribute and __remove__ the `width` style attribute (alternatively you can set it to 0)
 
     1. `data-percentage`
 
