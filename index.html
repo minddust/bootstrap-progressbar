@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>bootstrap-progressbar.js 0.4.3</title>
+    <title>bootstrap-progressbar.js 0.4.4</title>
 
     <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="bootstrap-progressbar.js"></script>
@@ -98,6 +98,64 @@
                 display_text: 2,
                 fail: function(error_message) { $('#fail-2').text(error_message); }
             });
+            
+            $('#trigger-25').on('click', function(event) {
+                $('.progress .bar.no-text-6').each(function(index) {
+                    $(this).attr('data-percentage', "25");
+                });
+                $('.progress .bar.text-filled-6').each(function(index) {
+                    $(this).attr('data-percentage', "25");
+                });
+                $('.progress .bar.text-center-6').each(function(index) {
+                    $(this).attr('data-percentage', "25");
+                });
+
+            	$('.progress .bar.no-text-6').progressbar();
+	            $('.progress .bar.text-filled-6').progressbar({
+	                display_text: 1
+	            });
+	            $('.progress .bar.text-center-6').progressbar({
+	                display_text: 2
+	            });
+            }); 
+            $('#trigger-54').on('click', function(event) {
+                $('.progress .bar.no-text-6').each(function(index) {
+                    $(this).attr('data-percentage', "54");
+                });
+                $('.progress .bar.text-filled-6').each(function(index) {
+                    $(this).attr('data-percentage', "54");
+                });
+                $('.progress .bar.text-center-6').each(function(index) {
+                    $(this).attr('data-percentage', "54");
+                });
+
+            	$('.progress .bar.no-text-6').progressbar();
+	            $('.progress .bar.text-filled-6').progressbar({
+	                display_text: 1
+	            });
+	            $('.progress .bar.text-center-6').progressbar({
+	                display_text: 2
+	            });
+            }); 
+            $('#trigger-100').on('click', function(event) {
+                $('.progress .bar.no-text-6').each(function(index) {
+                    $(this).attr('data-percentage', "100");
+                });
+                $('.progress .bar.text-filled-6').each(function(index) {
+                    $(this).attr('data-percentage', "100");
+                });
+                $('.progress .bar.text-center-6').each(function(index) {
+                    $(this).attr('data-percentage', "100");
+                });
+
+            	$('.progress .bar.no-text-6').progressbar();
+	            $('.progress .bar.text-filled-6').progressbar({
+	                display_text: 1
+	            });
+	            $('.progress .bar.text-center-6').progressbar({
+	                display_text: 2
+	            });
+            });        
         });
     </script>
 </head>
@@ -106,10 +164,69 @@
 <div class="container">
 <div class="row">
     <div class="span12">
-        <h1>bootstrap-progressbar 0.4.3</h1>
+        <h1>bootstrap-progressbar 0.4.4</h1>
     </div>
 </div>
 <br>
+<div class="row">
+    <div class="span3">
+        <h3>Options</h3>
+        <ul>
+            <li>default</li>
+        </ul>
+        <h3>Trigger</h3>
+        <ul>
+            <li><a href="#" id="trigger-25">click here for 25%</a></li>
+            <li><a href="#" id="trigger-54">click here for 54%</a></li>
+            <li><a href="#" id="trigger-100">click here for 100%</a></li>
+        </ul>
+    </div>
+    <div class="span3">
+        <h3>without text</h3>
+        <div class="progress progress-info">
+            <div class="bar no-text-6" data-percentage="25"></div>
+        </div>
+        <div class="progress progress-success">
+            <div class="bar no-text-6" data-percentage="50"></div>
+        </div>
+        <div class="progress progress-warning">
+            <div class="bar no-text-6" data-percentage="75"></div>
+        </div>
+        <div class="progress progress-danger">
+            <div class="bar no-text-6" data-percentage="100"></div>
+        </div>
+    </div>
+    <div class="span3">
+        <h3>text on filled bar</h3>
+        <div class="progress progress-info">
+            <div class="bar text-filled-6" data-percentage="25"></div>
+        </div>
+        <div class="progress progress-success">
+            <div class="bar text-filled-6" data-percentage="50"></div>
+        </div>
+        <div class="progress progress-warning">
+            <div class="bar text-filled-6" data-percentage="75"></div>
+        </div>
+        <div class="progress progress-danger">
+            <div class="bar text-filled-6" data-percentage="100"></div>
+        </div>
+    </div>
+    <div class="span3">
+        <h3>text on center</h3>
+        <div class="progress progress-info">
+            <div class="bar text-center-6" data-percentage="25"></div>
+        </div>
+        <div class="progress progress-success">
+            <div class="bar text-center-6" data-percentage="49"></div>
+        </div>
+        <div class="progress progress-warning">
+            <div class="bar text-center-6" data-percentage="52"></div>
+        </div>
+        <div class="progress progress-danger">
+            <div class="bar text-center-6" data-percentage="75"></div>
+        </div>
+    </div>
+</div>
 <div class="row">
     <div class="span3">
         <h3>Options</h3>
@@ -302,17 +419,17 @@
     </div>
 </div>
 <div class="row">
-    <div class="span3">
+    <div class="span6">
         <h3>Options</h3>
         <ul>
             <li>transition_delay: 13000</li>
             <li>transition: width 4s ease-in-out</li>
             <li>wrong data attributes set</li><br>
-            <li>bar1: <span id="fail-1" style="font-weight: bold; color: red"></span></li>
-            <li>bar2: <span id="fail-2" style="font-weight: bold; color: red"></span></li>
+            <li>fail callback bar1: <span id="fail-1" style="font-weight: bold; color: red"></span></li>
+            <li>fail callback bar2: <span id="fail-2" style="font-weight: bold; color: red"></span></li>
         </ul>
     </div>
-    <div class="span9">
+    <div class="span6">
         <h3>text on center</h3>
         <div class="progress progress-info">
             <div class="bar text-center-5-1 four-sec-ease-in-out" data-percentage="25"></div>
