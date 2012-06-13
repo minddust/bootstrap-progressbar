@@ -1,4 +1,4 @@
-# bootstrap-progressbar - 0.4.3
+# bootstrap-progressbar - 0.4.4
 
 `bootstrap-progressbar` is a [jQuery](http://jquery.com) plugin which extends the basic [twitter-bootstrap](http://twitter.github.com/bootstrap) progressbar. It provides the ability to animate the progressbar by adding Javascript in combination with the preexisting css transitions. Additionally you can display the current progress information in the bar or get the value via callback.
 
@@ -38,6 +38,10 @@
         <div class="progress progress-info">
             <div class="bar" data-amount-part="1337" data-amount-total="9000"></div>
         </div>
+
+## Useage Extended
+
+You can now trigger progressbar as much as you want. Just change your `data` attribute and trigger `.progressbar()` again. Please have a look at the demo page for a working example.
 
 ## Customization
 
