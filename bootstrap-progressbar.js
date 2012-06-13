@@ -1,5 +1,5 @@
 /* ========================================================
- * bootstrap-progressbar v0.4.3
+ * bootstrap-progressbar v0.4.4
  * ========================================================
  * Copyright 2012 minddust.com
  *
@@ -19,7 +19,6 @@
     var Progressbar = function (element, options) {
         this.element = $(element);
         this.options = $.extend({}, $.fn.progressbar.defaults, options);
-        this.transition();
     };
 
     Progressbar.prototype = {
@@ -30,9 +29,9 @@
             var $this = this.element,
                 $parent = $this.parent(),
                 options = this.options,
-                percentage = $this.data('percentage'),
-                amount_part = $this.data('amount-part'),
-                amount_total = $this.data('amount-total'),
+                percentage = $this.attr('data-percentage'),
+                amount_part = $this.attr('data-amount-part'),
+                amount_total = $this.attr('data-amount-total'),
                 update,
                 done,
                 fail;
@@ -130,6 +129,7 @@
             if (typeof option === 'string') {
                 data[option]();
             }
+            data.transition();
         });
     };
 
