@@ -39,7 +39,7 @@
             <div class="bar" data-amount-part="1337" data-amount-total="9000"></div>
         </div>
 
-## Useage Extended
+## Usage Extended
 
 You can now trigger progressbar as much as you want. Just change your `data` attribute and trigger `.progressbar()` again. Please have a look at the demo page for a working example.
 
