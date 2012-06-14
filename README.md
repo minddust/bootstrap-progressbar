@@ -41,7 +41,7 @@
 
 ## Usage Extended
 
-You can now trigger progressbar as much as you want. Just change your `data` attribute and trigger `.progressbar()` again. Please have a look at the demo page for a working example.
+You can now trigger progressbar as much as you want. Just change your `data` attribute and trigger `.progressbar()` again. All settings made before will be kept. Please have a look at the demo page for a working example.
 
 ## Customization
 
