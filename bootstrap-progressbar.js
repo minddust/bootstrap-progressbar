@@ -1,5 +1,5 @@
 /* ========================================================
- * bootstrap-progressbar v0.4.4
+ * bootstrap-progressbar v0.4.5
  * ========================================================
  * Copyright 2012 minddust.com
  *
@@ -64,6 +64,10 @@
                     '-moz-border-radius': options.border_radius,
                     'border-radius': options.border_radius
                 });
+
+                $parent.find('.progressbar-front-text').remove();
+                $parent.find('.progressbar-back-text').remove();
+                
                 $parent.prepend('<span class="progressbar-back-text" style="position:absolute;width:100%;text-align:center"></span>');
                 $this.prepend('<span class="progressbar-front-text" style="display:block;text-align:center"></span>');
                 var $back = $parent.find('.progressbar-back-text'),

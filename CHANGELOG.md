@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.4.5
+
+  * fixed stacking bug on centered text on multiple trigger
+
 ### 0.4.4
 
   * fixed caching bug with data method
