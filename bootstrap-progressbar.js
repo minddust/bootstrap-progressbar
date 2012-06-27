@@ -28,6 +28,8 @@
         transition: function() {
             var $this = this.element,
                 $parent = $this.parent(),
+                $back = this.back,
+                $front = this.front,
                 options = this.options,
                 percentage = $this.attr('data-percentage'),
                 amount_part = $this.attr('data-amount-part'),
@@ -54,7 +56,7 @@
                 }
             }
 
-            if (options.display_text ===  $.fn.progressbar.display_text.center) {
+            if (options.display_text ===  $.fn.progressbar.display_text.center && !$front && !$back) {
                 $parent.css('position', 'relative');
                 $this.css({
                     'position': 'absolute',
@@ -65,13 +67,10 @@
                     'border-radius': options.border_radius
                 });
 
-                $parent.find('.progressbar-front-text').remove();
-                $parent.find('.progressbar-back-text').remove();
-                
                 $parent.prepend('<span class="progressbar-back-text" style="position:absolute;width:100%;text-align:center"></span>');
                 $this.prepend('<span class="progressbar-front-text" style="display:block;text-align:center"></span>');
-                var $back = $parent.find('.progressbar-back-text'),
-                    $front = $parent.find('.progressbar-front-text');
+                this.back = $back = $parent.find('.progressbar-back-text'),
+                this.front = $front = $parent.find('.progressbar-front-text');
                 $front.css('width', $parent.css('width'));
                 $(window).resize(function() {
                     $front.css('width', $parent.css('width'));
@@ -107,8 +106,8 @@
                             $this.text(text);
                         }
                         else if (options.display_text ===  $.fn.progressbar.display_text.center) {
-                            $front.text(text);
                             $back.text(text);
+                            $front.text(text);
                         }
                     }
 
