@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.4.6
+
+  * fixed flickering on centered text on multiple trigger (due to last fix)
+
 ### 0.4.5
 
   * fixed stacking bug on centered text on multiple trigger
