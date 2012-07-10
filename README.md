@@ -52,14 +52,14 @@ You can now trigger progressbar as much as you want. Just change your `data` att
     ```javascript
     $(document).ready(function() {
         $('.progress .bar').progressbar({
-            transition_delay: 300
-        ,   refresh_speed: 50
-        ,   display_text: 2
-        ,   use_percentage: true
-        ,   border_radius: '4px'
-        ,   update: doSomethingCool( current_percentage ) { .. }
-        ,   done: doSomethingCool( ) { .. }
-        ,   fail: doSomethingCool( error_message ) { .. }
+            transition_delay: 300,
+            refresh_speed: 50,
+            display_text: 2,
+            use_percentage: true,
+            border_radius: '4px',
+            update: doSomethingCool( current_percentage ) { .. },
+            done: doSomethingCool( ) { .. },
+            fail: doSomethingCool( error_message ) { .. },
         });
     });
     ```
