@@ -85,7 +85,7 @@ You can now trigger progressbar as much as you want. Just change your `data` att
 
         ```css
         .progress .bar {
-          .transition(width 2s ease-in-out);
+            .transition(width 2s ease-in-out);
         }
         ```
     * css
