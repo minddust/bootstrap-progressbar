@@ -74,9 +74,9 @@ You can now trigger progressbar as much as you want. Just change your `data` att
     * `border_radius` hook to change the border radius of the progressbar
 
         * __you only have to set this if you are using centered text AND have overwritten the default bootstrap value__
-    * `update` hook where you can grab the actual percentage value
-    * `done` hook which indicates when progressbar is filled to the given value
-    * `fail` hook where you can grab an error message when something went wrong
+    * `update` callback where you can grab the actual percentage value
+    * `done` callback which indicates when progressbar is filled to the given value
+    * `fail` callback where you can grab an error message when something went wrong
 
 2. animation
 
