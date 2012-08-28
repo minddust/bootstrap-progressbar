@@ -63,19 +63,16 @@
 ## Customization
 
 1. alignment
-
     * to use a horizontal progressbar which is align to the right you have to add `right` to the `progress` element
 
        ```html
        <div class="progress right progress-info">
        ```
-
     * to use a vertical progressbar you have to add `vertical` to the `progress` element
 
        ```html
        <div class="progress vertical progress-info">
        ```
-
     * to use a vertical progressbar which is align to the bottom you have to add `vertical` and `bottom` to the `progress` element
 
        ```html
@@ -102,7 +99,6 @@
     * `transition_delay` is the time in milliseconds until the animation starts
     * `refresh_speed` is the time in milliseconds which will elapse between every text refresh / callback call
     * `display_text` determines whether the text will be displayed
-
         * `0` __no text__ *(this mode doesn't change any css / html)*
         * `1` __text on filled bar__ *(this mode doesn't change any css / html)*
         * `2` __text on center__ *(this mode changes css / html due to styling requirements)*
@@ -116,7 +112,6 @@
     to change the animation itself you have to overwrite either less or css
 
     1. horizontal
-
         * less
 
             ```css
@@ -137,7 +132,6 @@
             ```
 
     1. vertical
-
         * less
 
             ```css
