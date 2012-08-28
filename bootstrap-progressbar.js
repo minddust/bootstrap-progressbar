@@ -1,5 +1,5 @@
 /* ========================================================
- * bootstrap-progressbar v0.4.6
+ * bootstrap-progressbar v0.5.0
  * ========================================================
  * Copyright 2012 minddust.com
  *
@@ -34,9 +34,12 @@
                 percentage = $this.attr('data-percentage'),
                 amount_part = $this.attr('data-amount-part'),
                 amount_total = $this.attr('data-amount-total'),
+                is_vertical,
                 update,
                 done,
                 fail;
+
+            is_vertical = $parent.hasClass('vertical');
 
             update = (options.update && typeof(options.update) === 'function') ? options.update : $.fn.progressbar.defaults.update;
             done = (options.done && typeof(options.done) === 'function') ? options.done : $.fn.progressbar.defaults.done;
@@ -56,41 +59,67 @@
                 }
             }
 
-            if (options.display_text ===  $.fn.progressbar.display_text.center && !$front && !$back) {
-                $parent.css('position', 'relative');
-                $this.css({
-                    'position': 'absolute',
-                    'float': 'left',
-                    'overflow': 'hidden',
-                    '-webkit-border-radius': options.border_radius,
-                    '-moz-border-radius': options.border_radius,
-                    'border-radius': options.border_radius
-                });
+            if (options.display_text === $.fn.progressbar.display_text.center && !$front && !$back) {
+                this.back = $back = $('<span>').addClass('progressbar-back-text');
+                this.front = $front = $('<span>').addClass('progressbar-front-text');
 
-                $parent.prepend('<span class="progressbar-back-text" style="position:absolute;width:100%;text-align:center"></span>');
-                $this.prepend('<span class="progressbar-front-text" style="display:block;text-align:center"></span>');
-                this.back = $back = $parent.find('.progressbar-back-text'),
-                this.front = $front = $parent.find('.progressbar-front-text');
-                $front.css('width', $parent.css('width'));
-                $(window).resize(function() {
-                    $front.css('width', $parent.css('width'));
-                }); // normal resizing would brick the structure because width is in px
+                $parent.prepend($back);
+                $this.prepend($front);
+
+                var parent_size;
+
+                if (is_vertical) {
+                    parent_size = $parent.css('height');
+                    $back.css('height', parent_size);
+                    $back.css('line-height', parent_size);
+                    $front.css('height', parent_size);
+                    $front.css('line-height', parent_size);
+
+                    $(window).resize(function() {
+                        parent_size = $parent.css('height');
+                        $back.css('height', parent_size);
+                        $back.css('line-height', parent_size);
+                        $front.css('height', parent_size);
+                        $front.css('line-height', parent_size);
+                    }); // normal resizing would brick the structure because width is in px
+                }
+                else {
+                    parent_size = $parent.css('width');
+                    $front.css('width', parent_size);
+
+                    $(window).resize(function() {
+                        parent_size = $parent.css('width');
+                        $front.css('width', parent_size);
+                    }); // normal resizing would brick the structure because width is in px
+                }
             }
 
             setTimeout(function() {
-                $this.css('width', percentage+'%');
-
                 var current_percentage,
                     current_value,
-                    this_width,
-                    parent_width,
+                    this_size,
+                    parent_size,
                     text;
 
+                if (is_vertical) {
+                    $this.css('height', percentage+'%');
+                }
+                else {
+                    $this.css('width', percentage+'%');
+                }
+
                 var progress = setInterval(function() {
-                    this_width = $this.width();
-                    parent_width = $parent.width();
-                    current_percentage = Math.round(100 * this_width / parent_width);
-                    current_value = Math.round(this_width / parent_width * amount_total);
+                    if (is_vertical) {
+                        this_size = $this.height();
+                        parent_size = $parent.height();
+                    }
+                    else {
+                        this_size = $this.width();
+                        parent_size = $parent.width();
+                    }
+
+                    current_percentage = Math.round(100 * this_size / parent_size);
+                    current_value = Math.round(this_size / parent_size * amount_total);
 
                     if (current_percentage >= percentage) {
                         current_percentage = percentage;
@@ -102,10 +131,10 @@
                     if (options.display_text !== $.fn.progressbar.display_text.none) {
                         text = options.use_percentage ? (current_percentage +'%') : (current_value + ' / ' + amount_total);
 
-                        if (options.display_text ===  $.fn.progressbar.display_text.filled){
+                        if (options.display_text === $.fn.progressbar.display_text.filled){
                             $this.text(text);
                         }
-                        else if (options.display_text ===  $.fn.progressbar.display_text.center) {
+                        else if (options.display_text === $.fn.progressbar.display_text.center) {
                             $back.text(text);
                             $front.text(text);
                         }
@@ -113,7 +142,6 @@
 
                     update(current_percentage);
                 }, options.refresh_speed);
-
             }, options.transition_delay);
         }
     };
@@ -147,7 +175,6 @@
         refresh_speed: 50,
         display_text: $.fn.progressbar.display_text.none,
         use_percentage: true,
-        border_radius: '4px',
         update: $.noop,
         done: $.noop,
         fail: $.noop

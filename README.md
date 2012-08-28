@@ -1,4 +1,4 @@
-# bootstrap-progressbar - 0.4.6
+# bootstrap-progressbar - 0.5.0
 
 `bootstrap-progressbar` is a [jQuery](http://jquery.com) plugin which extends the basic [twitter-bootstrap](http://twitter.github.com/bootstrap) progressbar. It provides the ability to animate the progressbar by adding Javascript in combination with the preexisting css transitions. Additionally you can display the current progress information in the bar or get the value via callback.
 
@@ -41,11 +41,48 @@
 
 ## Usage Extended
 
-You can now trigger progressbar as much as you want. Just change your `data` attribute and trigger `.progressbar()` again. All settings made before will be kept. Please have a look at the demo page for a working example.
+* Do i need the additional style file?
+
+    * for the horizontal bar with no or filled text: __NO__
+    * for any vertical bars or the horizontal bar with centered text: __YES__
+
+       ```html
+       <link rel="stylesheet/less" type="text/css" href="bootstrap-progressbar.less">
+       ```
+
+       or
+
+       ```html
+       <link rel="stylesheet" type="text/css" href="bootstrap-progressbar.css">
+       ```
+
+* Multiple trigger
+
+    You can trigger progressbar as much as you want. Just change your `data` attribute and trigger `.progressbar()` again. All settings made before will be kept. Please have a look at the demo page for a working example.
 
 ## Customization
 
-1. text and delay
+1. alignment
+
+    * to use a horizontal progressbar which is align to the right you have to add `right` to the `progress` element
+
+       ```html
+       <div class="progress right progress-info">
+       ```
+
+    * to use a vertical progressbar you have to add `vertical` to the `progress` element
+
+       ```html
+       <div class="progress vertical progress-info">
+       ```
+
+    * to use a vertical progressbar which is align to the bottom you have to add `vertical` and `bottom` to the `progress` element
+
+       ```html
+       <div class="progress vertical bottom progress-info">
+       ```
+
+2. text and delay
 
     simply add additional parameters when activating the script
 
@@ -56,7 +93,6 @@ You can now trigger progressbar as much as you want. Just change your `data` att
             refresh_speed: 50,
             display_text: 2,
             use_percentage: true,
-            border_radius: '4px',
             update: doSomethingCool( current_percentage ) { .. },
             done: doSomethingCool( ) { .. },
             fail: doSomethingCool( error_message ) { .. },
@@ -71,34 +107,55 @@ You can now trigger progressbar as much as you want. Just change your `data` att
         * `1` __text on filled bar__ *(this mode doesn't change any css / html)*
         * `2` __text on center__ *(this mode changes css / html due to styling requirements)*
     * `use_percentage` determines whether the text will be displayed in percent or amount
-    * `border_radius` hook to change the border radius of the progressbar
-
-        * __you only have to set this if you are using centered text AND have overwritten the default bootstrap value__
     * `update` callback where you can grab the actual percentage value
     * `done` callback which indicates when progressbar is filled to the given value
     * `fail` callback where you can grab an error message when something went wrong
 
-2. animation
+3. animation
 
     to change the animation itself you have to overwrite either less or css
-    * less
 
-        ```css
-        .progress .bar {
-            .transition(width 2s ease-in-out);
-        }
-        ```
-    * css
-    
-        ```css
-        .progress .bar {
-            -webkit-transition: width 2s ease-in-out;
-            -moz-transition: width 2s ease-in-out;
-            -ms-transition: width 2s ease-in-out;
-            -o-transition: width 2s ease-in-out;
-            transition: width 2s ease-in-out;
-        }
-        ```
+    1. horizontal
+
+        * less
+
+            ```css
+            .progress .bar {
+                .transition(width 2s ease-in-out);
+            }
+            ```
+        * css
+
+            ```css
+            .progress .bar {
+                -webkit-transition: width 2s ease-in-out;
+                -moz-transition: width 2s ease-in-out;
+                -ms-transition: width 2s ease-in-out;
+                -o-transition: width 2s ease-in-out;
+                transition: width 2s ease-in-out;
+            }
+            ```
+
+    1. vertical
+
+        * less
+
+            ```css
+            .progress.vertical .bar {
+                .transition(height 2s ease-in-out);
+            }
+            ```
+        * css
+
+            ```css
+            .progress.vertical .bar {
+                -webkit-transition: height 2s ease-in-out;
+                -moz-transition: height 2s ease-in-out;
+                -ms-transition: height 2s ease-in-out;
+                -o-transition: height 2s ease-in-out;
+                transition: height 2s ease-in-out;
+            }
+            ```
 
 ## License
 
