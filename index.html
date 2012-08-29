@@ -223,6 +223,60 @@
                     display_text: 2
                 });
             });
+            $('#v-multi-trigger-0-trigger').on('click', function(event) {
+                $('.progress .bar.text-no-15').each(function(index) {
+                    $(this).attr('data-percentage', "0");
+                });
+                $('.progress .bar.text-filled-15').each(function(index) {
+                    $(this).attr('data-percentage', "0");
+                });
+                $('.progress .bar.text-centered-15').each(function(index) {
+                    $(this).attr('data-percentage', "0");
+                });
+                $('.progress .bar.text-no-15').progressbar();
+                $('.progress .bar.text-filled-15').progressbar({
+                    display_text: 1
+                });
+                $('.progress .bar.text-centered-15').progressbar({
+                    display_text: 2
+                });
+            });
+            $('#v-multi-trigger-50-trigger').on('click', function(event) {
+                $('.progress .bar.text-no-15').each(function(index) {
+                    $(this).attr('data-percentage', "50");
+                });
+                $('.progress .bar.text-filled-15').each(function(index) {
+                    $(this).attr('data-percentage', "50");
+                });
+                $('.progress .bar.text-centered-15').each(function(index) {
+                    $(this).attr('data-percentage', "50");
+                });
+                $('.progress .bar.text-no-15').progressbar();
+                $('.progress .bar.text-filled-15').progressbar({
+                    display_text: 1
+                });
+                $('.progress .bar.text-centered-15').progressbar({
+                    display_text: 2
+                });
+            });
+            $('#v-multi-trigger-100-trigger').on('click', function(event) {
+                $('.progress .bar.text-no-15').each(function(index) {
+                    $(this).attr('data-percentage', "100");
+                });
+                $('.progress .bar.text-filled-15').each(function(index) {
+                    $(this).attr('data-percentage', "100");
+                });
+                $('.progress .bar.text-centered-15').each(function(index) {
+                    $(this).attr('data-percentage', "100");
+                });
+                $('.progress .bar.text-no-15').progressbar();
+                $('.progress .bar.text-filled-15').progressbar({
+                    display_text: 1
+                });
+                $('.progress .bar.text-centered-15').progressbar({
+                    display_text: 2
+                });
+            });
         });
     </script>
 </head>
@@ -249,6 +303,7 @@
                     <li><a href="#v-transition-speed">transition & speed</a></li>
                     <li><a href="#v-callback">callback</a></li>
                     <li><a href="#v-error">error</a></li>
+                    <li><a href="#v-multi-trigger">multi trigger</a></li>
                 </ul>
             </div>
         </div>
@@ -986,39 +1041,102 @@
                         <div class="bar text-centered-13-4 six-sec-ease-in-out" data-percentage="100"></div>
                     </div>
                 </div>
-        </div>
-        </section>
-        <section id="v-error">
-            <div class="page-header">
-                <h2>error</h2>
-            </div>
-            <div class="row-fluid">
-                <div class="span3">
-                    <h3>options</h3>
-                    <ul>
-                        <li>default</li>
-                    </ul>
-                    <h3>trigger</h3>
-                    <ul>
-                        <li><a id="v-error-trigger">start</a></li>
-                    </ul>
-                    <h3>callback</h3>
-                    <ul>
-                        <li>fail: <span id="v-error-fail-1" style="color:red;"></span></li>
-                        <li>fail: <span id="v-error-fail-2" style="color:red;"></span></li>
-                    </ul>
+            </section>
+            <section id="v-error">
+                <div class="page-header">
+                    <h2>error</h2>
                 </div>
-                <div class="span9 vertical-progressbar-span">
-                    <h3>centered text</h3>
-                    <div class="progress vertical wide progress-info">
-                        <div class="bar text-centered-14-1 six-sec-ease-in-out" data-percentage="25"></div>
+                <div class="row-fluid">
+                    <div class="span3">
+                        <h3>options</h3>
+                        <ul>
+                            <li>default</li>
+                        </ul>
+                        <h3>trigger</h3>
+                        <ul>
+                            <li><a id="v-error-trigger">start</a></li>
+                        </ul>
+                        <h3>callback</h3>
+                        <ul>
+                            <li>fail: <span id="v-error-fail-1" style="color:red;"></span></li>
+                            <li>fail: <span id="v-error-fail-2" style="color:red;"></span></li>
+                        </ul>
                     </div>
-                    <div class="progress vertical wide progress-success">
-                        <div class="bar text-centered-14-2 six-sec-ease-in-out" data-amount-part="1337" data-amount-total="9000"></div>
+                    <div class="span9 vertical-progressbar-span">
+                        <h3>centered text</h3>
+                        <div class="progress vertical wide progress-info">
+                            <div class="bar text-centered-14-1 six-sec-ease-in-out" data-percentage="25"></div>
+                        </div>
+                        <div class="progress vertical wide progress-success">
+                            <div class="bar text-centered-14-2 six-sec-ease-in-out" data-amount-part="1337" data-amount-total="9000"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            <section id="v-multi-trigger">
+                <div class="page-header">
+                    <h2>multi trigger</h2>
+                </div>
+                <div class="row-fluid">
+                    <div class="span3">
+                        <h3>options</h3>
+                        <ul>
+                            <li>default</li>
+                        </ul>
+                        <h3>trigger</h3>
+                        <ul>
+                            <li><a id="v-multi-trigger-0-trigger">start with 0</a></li>
+                            <li><a id="v-multi-trigger-50-trigger">start with 50</a></li>
+                            <li><a id="v-multi-trigger-100-trigger">start with 100</a></li>
+                        </ul>
+                    </div>
+                    <div class="span3 vertical-progressbar-span">
+                        <h3>no text</h3>
+                        <div class="progress vertical progress-info">
+                            <div class="bar text-no-15" data-percentage="25"></div>
+                        </div>
+                        <div class="progress vertical progress-success">
+                            <div class="bar text-no-15" data-percentage="50"></div>
+                        </div>
+                        <div class="progress vertical progress-warning">
+                            <div class="bar text-no-15" data-percentage="75"></div>
+                        </div>
+                        <div class="progress vertical progress-danger">
+                            <div class="bar text-no-15" data-percentage="100"></div>
+                        </div>
+                    </div>
+                    <div class="span3 vertical-progressbar-span">
+                        <h3>filled text</h3>
+                        <div class="progress vertical progress-info">
+                            <div class="bar text-filled-15" data-percentage="25"></div>
+                        </div>
+                        <div class="progress vertical progress-success">
+                            <div class="bar text-filled-15" data-percentage="50"></div>
+                        </div>
+                        <div class="progress vertical progress-warning">
+                            <div class="bar text-filled-15" data-percentage="75"></div>
+                        </div>
+                        <div class="progress vertical progress-danger">
+                            <div class="bar text-filled-15" data-percentage="100"></div>
+                        </div>
+                    </div>
+                    <div class="span3 vertical-progressbar-span">
+                        <h3>centered text</h3>
+                        <div class="progress vertical progress-info">
+                            <div class="bar text-centered-15" data-percentage="25"></div>
+                        </div>
+                        <div class="progress vertical progress-success">
+                            <div class="bar text-centered-15" data-percentage="50"></div>
+                        </div>
+                        <div class="progress vertical progress-warning">
+                            <div class="bar text-centered-15" data-percentage="75"></div>
+                        </div>
+                        <div class="progress vertical progress-danger">
+                            <div class="bar text-centered-15" data-percentage="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </div>
 </div>
