@@ -121,7 +121,7 @@
                     current_percentage = Math.round(100 * this_size / parent_size);
                     current_value = Math.round(this_size / parent_size * amount_total);
 
-                    if (current_percentage >= percentage) {
+                    if (current_percentage >= percentage || current_percentage+1 == percentage) {
                         current_percentage = percentage;
                         current_value = amount_part;
                         done();
