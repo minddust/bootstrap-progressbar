@@ -151,6 +151,10 @@
             }
             ```
 
+## Known Problems
+
+* Looks like iOS Safari is flooring the width of the transition. So if you want to display text with a correct value you have to use a full bar width **greater or equal 100px**.
+
 ## License
 
 Copyright 2012 [minddust.com](http://www.minddust.com)
