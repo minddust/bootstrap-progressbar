@@ -1,3 +1,13 @@
+# update coming this friday (02.08.13)  :cake: :tada:
+
+* switch to MIT license
+* bootstrap 3 support
+* new demo page
+* code cleanup
+* ..
+
+check this out - see you friday!
+
 # bootstrap-progressbar - 0.5.0
 
 `bootstrap-progressbar` is a [jQuery](http://jquery.com) plugin which extends the basic [twitter-bootstrap](http://twitter.github.com/bootstrap) progressbar. It provides the ability to animate the progressbar by adding Javascript in combination with the preexisting css transitions. Additionally you can display the current progress information in the bar or get the value via callback.
