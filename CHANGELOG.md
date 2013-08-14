@@ -1,31 +1,39 @@
 # Changelog
 
+### 0.6.0
+
+* added bootstrap 3 support
+* added `noConflict` fallback
+* switched `display_text` option dict to string setting
+* switched from jQuery's `*.attr('data-*')` to `*.data('*')` (yeah.. :D again)
+* switched license from Apache2 to MIT
+
 ### 0.5.0
 
-  * added vertical progressbars
-  * added right alignment
-  * moved styles to css/less
-  * fixed some code formatting
-  * fixed different font sizes
+* added vertical progressbars
+* added right alignment
+* moved styles to css/less
+* fixed some code formatting
+* fixed different font sizes
 
 ### 0.4.6
 
-  * fixed flickering on centered text on multiple trigger (due to last fix)
+* fixed flickering on centered text on multiple trigger (due to last fix)
 
 ### 0.4.5
 
-  * fixed stacking bug on centered text on multiple trigger
+* fixed stacking bug on centered text on multiple trigger
 
 ### 0.4.4
 
-  * fixed caching bug with data method
-  * added multitrigger support
+* fixed caching bug with data method
+* added multitrigger support
 
 ### 0.4.3
 
-  * switched from jQuery's ` *.attr('data-*')` to `*.data('*')`
+* switched from jQuery's `*.attr('data-*')` to `*.data('*')`
 
 ### 0.4.2
 
-  * started changelog
-  * switched to github markdown
+* started changelog
+* switched to github markdown
