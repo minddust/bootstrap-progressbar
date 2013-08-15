@@ -6,6 +6,8 @@
 * code cleanup
 * ..
 
+note: dont work with stacked progressbars
+
 check this out - see you friday!
 
 # bootstrap-progressbar - 0.5.0
