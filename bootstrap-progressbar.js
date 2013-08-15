@@ -22,7 +22,7 @@
     Progressbar.defaults = {
         transition_delay: 300,
         refresh_speed: 50,
-        display_text: 'center',
+        display_text: 'none',
         use_percentage: true,
         update: $.noop,
         done: $.noop,
@@ -44,27 +44,19 @@
         var $back_text = this.$back_text;
         var $front_text = this.$front_text;
         var options = this.options;
-        var percentage = $this.data('percentage');
-        var amount_part = $this.data('amount-part');
-        var amount_total = $this.data('amount-total');
+        var aria_valuenow = $this.attr('aria-valuenow');
+        var aria_valuemin = $this.attr('aria-valuemin') || 0;
+        var aria_valuemax = $this.attr('aria-valuemax') || 100;
         var is_vertical = $parent.hasClass('vertical');
         var update = options.update && typeof options.update === 'function' ? options.update : Progressbar.defaults.update;
         var done = options.done && typeof options.done === 'function' ? options.done : Progressbar.defaults.done;
         var fail = options.fail && typeof options.fail === 'function' ? options.fail : Progressbar.defaults.fail;
 
-        if (options.use_percentage && !percentage) {
-            fail('data-percentage not set');
+        if (!aria_valuenow) {
+            fail('aria-valuenow not set');
             return;
         }
-        else if (!options.use_percentage) {
-            if (!amount_part || !amount_total) {
-                fail('data-amount-part or data-amount-total not set');
-                return;
-            }
-            else {
-                percentage = Math.round(100 * amount_part / amount_total);
-            }
-        }
+        var percentage = Math.round(100 * (aria_valuenow - aria_valuemin) / (aria_valuemax - aria_valuemin));
 
         if (options.display_text === 'center' && !$back_text && !$front_text) {
             this.$back_text = $back_text = $('<span>', {class: 'progressbar-back-text'}).prependTo($parent);
@@ -119,17 +111,17 @@
                 }
 
                 current_percentage = Math.round(100 * this_size / parent_size);
-                current_value = Math.round(this_size / parent_size * amount_total);
+                current_value = Math.round(this_size / parent_size * (aria_valuemax - aria_valuemin));
 
                 if (current_percentage >= percentage) {
                     current_percentage = percentage;
-                    current_value = amount_part;
+                    current_value = aria_valuenow;
                     done();
                     clearInterval(progress);
                 }
 
                 if (options.display_text !== 'none') {
-                    text = options.use_percentage ? instance.percent_format(current_percentage) : instance.amount_format(current_value, amount_total);
+                    text = options.use_percentage ? instance.percent_format(current_percentage) : instance.amount_format(current_value, aria_valuemax);
 
                     if (options.display_text === 'filled'){
                         $this.text(text);
