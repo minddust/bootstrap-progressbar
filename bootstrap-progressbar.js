@@ -24,21 +24,14 @@
         refresh_speed: 50,
         display_text: 'none',
         use_percentage: true,
+        percent_format: function(percent) { return percent + '%'; },
+        amount_format: function(amount_part, amount_total) { return amount_part + ' / ' + amount_total; },
         update: $.noop,
         done: $.noop,
         fail: $.noop
     };
 
-    Progressbar.prototype.percent_format = function(percent) {
-        return percent + '%';
-    };
-
-    Progressbar.prototype.amount_format = function(amount_part, amount_total) {
-        return amount_part + ' / ' + amount_total;
-    };
-
     Progressbar.prototype.transition = function() {
-        var instance = this;
         var $this = this.$element;
         var $parent = $this.parent();
         var $back_text = this.$back_text;
@@ -121,7 +114,7 @@
                 }
 
                 if (options.display_text !== 'none') {
-                    text = options.use_percentage ? instance.percent_format(current_percentage) : instance.amount_format(current_value, aria_valuemax);
+                    text = options.use_percentage ? options.percent_format(current_percentage) : options.amount_format(current_value, aria_valuemax);
 
                     if (options.display_text === 'fill'){
                         $this.text(text);
