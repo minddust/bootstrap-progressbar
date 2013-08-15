@@ -37,7 +37,7 @@
         var $back_text = this.$back_text;
         var $front_text = this.$front_text;
         var options = this.options;
-        var aria_valuenow = $this.attr('aria-valuenow');
+        var aria_valuetransitiongoal = $this.attr('aria-valuetransitiongoal');
         var aria_valuemin = $this.attr('aria-valuemin') || 0;
         var aria_valuemax = $this.attr('aria-valuemax') || 100;
         var is_vertical = $parent.hasClass('vertical');
@@ -45,11 +45,11 @@
         var done = options.done && typeof options.done === 'function' ? options.done : Progressbar.defaults.done;
         var fail = options.fail && typeof options.fail === 'function' ? options.fail : Progressbar.defaults.fail;
 
-        if (!aria_valuenow) {
-            fail('aria-valuenow not set');
+        if (!aria_valuetransitiongoal) {
+            fail('aria-valuetransitiongoal not set');
             return;
         }
-        var percentage = Math.round(100 * (aria_valuenow - aria_valuemin) / (aria_valuemax - aria_valuemin));
+        var percentage = Math.round(100 * (aria_valuetransitiongoal - aria_valuemin) / (aria_valuemax - aria_valuemin));
 
         if (options.display_text === 'center' && !$back_text && !$front_text) {
             this.$back_text = $back_text = $('<span>', {class: 'progressbar-back-text'}).prependTo($parent);
@@ -108,7 +108,7 @@
 
                 if (current_percentage >= percentage) {
                     current_percentage = percentage;
-                    current_value = aria_valuenow;
+                    current_value = aria_valuetransitiongoal;
                     done();
                     clearInterval(progress);
                 }
@@ -124,6 +124,7 @@
                         $front_text.text(text);
                     }
                 }
+                $this.attr('aira-valuenow', current_value);
 
                 update(current_percentage);
             }, options.refresh_speed);
