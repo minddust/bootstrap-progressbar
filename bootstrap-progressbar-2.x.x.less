@@ -1,51 +1,18 @@
-/* ========================================================
- * bootstrap-progressbar v0.5.0
- * ========================================================
- * Copyright 2012 minddust.com
+/*!
+ * bootstrap-progressbar v0.6.0 by @minddust
+ * Copyright (c) 2012-2013 Stephan Gross
  *
- * bootstrap-progressbar is published under Apache License,
- * Version 2.0 (see LICENSE file).
+ * https://www.minddust.com/bootstrap-progressbar
  *
- * http://www.apache.org/licenses/LICENSE-2.0
- * ======================================================== */
-
-// local copy of twitter bootstrap defines
-// ---------------------------------------
-
-@baseLineHeight: 20px;
-@orange: #f89406;
-
-#gradient {
-    .horizontal(@startColor: #555, @endColor: #333) {
-        background-color: @endColor;
-        background-image: -moz-linear-gradient(left, @startColor, @endColor); // FF 3.6+
-        background-image: -webkit-gradient(linear, 0 0, 100% 0, from(@startColor), to(@endColor)); // Safari 4+, Chrome 2+
-        background-image: -webkit-linear-gradient(left, @startColor, @endColor); // Safari 5.1+, Chrome 10+
-        background-image: -o-linear-gradient(left, @startColor, @endColor); // Opera 11.10
-        background-image: linear-gradient(to right, @startColor, @endColor); // Standard, IE10
-        background-repeat: repeat-x;
-        filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=1)",argb(@startColor),argb(@endColor))); // IE9 and down
-    }
-}
-
-.transition(@transition) {
-    -webkit-transition: @transition;
-    -moz-transition: @transition;
-    -o-transition: @transition;
-    transition: @transition;
-}
-
-.border-radius(@radius) {
-    -webkit-border-radius: @radius;
-    -moz-border-radius: @radius;
-    border-radius: @radius;
-}
-
-// bootstrap-progressbar global styles
-// -----------------------------------
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
 
 @progressbarVerticalWidth: @baseLineHeight;
 @progressbarFontSize: 12px;
+
+// bootstrap-progressbar global styles
+// -----------------------------------
 
 .progress {
     position: relative;
@@ -54,7 +21,6 @@
 .progress .bar {
     position: absolute;
     overflow: hidden;
-    .border-radius(4px)
 }
 
 .progress .progressbar-back-text {
@@ -108,7 +74,6 @@
     width: 100%;
     height: 0;
     #gradient > .horizontal(#149bdf, #0480be);
-    .transition(height .6s ease);
 }
 
 .progress.vertical.bottom .bar {
@@ -120,18 +85,30 @@
 .progress-danger.vertical .bar, .progress.vertical .bar-danger {
     #gradient > .horizontal(#ee5f5b, #c43c35);
 }
+.progress-danger.progress-striped.vertical .bar, .progress.progress-striped.vertical .bar-danger {
+    #gradient > .striped(#ee5f5b);
+}
 
 // Success (green)
 .progress-success.vertical .bar, .progress.vertical .bar-success {
     #gradient > .horizontal(#62c462, #57a957);
+}
+.progress-success.progress-striped.vertical .bar, .progress.progress-striped.vertical .bar-success {
+    #gradient > .striped(#62c462);
 }
 
 // Info (teal)
 .progress-info.vertical .bar, .progress.vertical .bar-info {
     #gradient > .horizontal(#5bc0de, #339bb9);
 }
+.progress-info.progress-striped.vertical .bar, .progress.progress-striped.vertical .bar-info {
+    #gradient > .striped(#5bc0de);
+}
 
 // Warning (orange)
 .progress-warning.vertical .bar, .progress.vertical .bar-warning {
     #gradient > .horizontal(lighten(@orange, 15%), @orange);
+}
+.progress-warning.progress-striped.vertical .bar, .progress.progress-striped.vertical .bar-warning {
+    #gradient > .striped(lighten(@orange, 15%));
 }
