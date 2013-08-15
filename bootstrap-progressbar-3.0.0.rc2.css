@@ -13,18 +13,21 @@
 .progress .progress-bar {
   position: absolute;
   overflow: hidden;
+  line-height: 20px;
 }
 .progress .progressbar-back-text {
   position: absolute;
   width: 100%;
   height: 100%;
   font-size: 12px;
+  line-height: 20px;
   text-align: center;
 }
 .progress .progressbar-front-text {
   display: block;
   width: 100%;
   font-size: 12px;
+  line-height: 20px;
   text-align: center;
 }
 .progress.right .progress-bar {
