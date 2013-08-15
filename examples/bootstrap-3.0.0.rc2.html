@@ -161,6 +161,17 @@
                             </ul>
                         </li>
                         <li>
+                            <a href="#v-bottom">default settings (bottom)</a>
+                            <ul class="nav">
+                                <li><a href="#v-bottom-basic">basic</a></li>
+                                <li><a href="#v-bottom-themed">themed</a></li>
+                                <li><a href="#v-bottom-striped">striped</a></li>
+                                <li><a href="#v-bottom-animated">animated</a></li>
+                                <li><a href="#v-bottom-aria">custom aria range</a></li>
+                                <li><a href="#v-bottom-animation">custom animation</a></li>
+                            </ul>
+                        </li>
+                        <li>
                             <a href="#v-fill">filled text</a>
                             <ul class="nav">
                                 <li><a href="#v-fill-basic">basic</a></li>
@@ -2153,6 +2164,287 @@
     &lt;div class=&quot;progress-bar progress-bar-warning six-sec-ease-in-out&quot; aria-valuenow=&quot;80&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;progress vertical&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-danger six-sec-ease-in-out&quot; aria-valuenow=&quot;100&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code>
+                        </pre><br>
+                        <pre class="prettyprint">
+<code>$('.progress-bar').progressbar();</code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="bs-docs-section">
+                    <div class="page-header">
+                        <h1 id="v-bottom">default settings (bottom)</h1>
+                    </div>
+                    <p class="lead">this is just plain default behavior - bottom aligned.</p>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+<code>Progressbar.defaults = {
+    transition_delay: 300,
+    refresh_speed: 50,
+    display_text: 'none',
+    use_percentage: true,
+    update: $.noop,
+    done: $.noop,
+    fail: $.noop
+};</code>
+                        </pre>
+                    </div>
+                    <h3>basic progressbar <button type="button" class="btn btn-primary" id="v-bottom-basic">start</button></h3>
+                    <div class="bs-example vertical bottom v-bottom-basic">
+                        <div class="progress vertical bottom wide">
+                            <div class="progress-bar" aria-valuenow="75"></div>
+                        </div>
+                        <script type='text/javascript'>
+                            $(document).ready(function() {
+                                $('#v-bottom-basic').click(function() {
+                                    $('.v-bottom-basic .progress-bar').progressbar();
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+<code>&lt;div class=&quot;progress vertical bottom&quot;&gt;
+    &lt;div class=&quot;progress-bar&quot; aria-valuenow=&quot;75&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code>
+                        </pre><br>
+                        <pre class="prettyprint">
+<code>$('.progress-bar').progressbar();</code>
+                        </pre>
+                    </div>
+                    <h3>themed progressbars <button type="button" class="btn btn-primary" id="v-bottom-themed">start</button></h3>
+                    <div class="bs-example vertical bottom v-bottom-themed">
+                        <div class="progress vertical bottom wide">
+                            <div class="progress-bar progress-bar-info" aria-valuenow="40"></div>
+                        </div>
+                        <div class="progress vertical bottom wide">
+                            <div class="progress-bar progress-bar-success" aria-valuenow="60"></div>
+                        </div>
+                        <div class="progress vertical bottom wide">
+                            <div class="progress-bar progress-bar-warning" aria-valuenow="80"></div>
+                        </div>
+                        <div class="progress vertical bottom wide">
+                            <div class="progress-bar progress-bar-danger" aria-valuenow="100"></div>
+                        </div>
+                        <script type='text/javascript'>
+                            $(document).ready(function() {
+                                $('#v-bottom-themed').click(function() {
+                                    $('.v-bottom-themed .progress-bar').progressbar();
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+<code>&lt;div class=&quot;progress vertical bottom&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-info&quot; aria-valuenow=&quot;40&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress vertical bottom&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-success&quot; aria-valuenow=&quot;60&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress vertical bottom&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-warning&quot; aria-valuenow=&quot;80&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress vertical bottom&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-danger&quot; aria-valuenow=&quot;100&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code>
+                        </pre><br>
+                        <pre class="prettyprint">
+<code>$('.progress-bar').progressbar();</code>
+                        </pre>
+                    </div>
+                    <h3>striped progressbars <button type="button" class="btn btn-primary" id="v-bottom-striped">start</button></h3>
+                    <div class="bs-example vertical bottom v-bottom-striped">
+                        <div class="progress progress-striped vertical bottom wide">
+                            <div class="progress-bar" aria-valuenow="20"></div>
+                        </div>
+                        <div class="progress progress-striped vertical bottom wide">
+                            <div class="progress-bar progress-bar-info" aria-valuenow="40"></div>
+                        </div>
+                        <div class="progress progress-striped vertical bottom wide">
+                            <div class="progress-bar progress-bar-success" aria-valuenow="60"></div>
+                        </div>
+                        <div class="progress progress-striped vertical bottom wide">
+                            <div class="progress-bar progress-bar-warning" aria-valuenow="80"></div>
+                        </div>
+                        <div class="progress progress-striped vertical bottom wide">
+                            <div class="progress-bar progress-bar-danger" aria-valuenow="100"></div>
+                        </div>
+                        <script type='text/javascript'>
+                            $(document).ready(function() {
+                                $('#v-bottom-striped').click(function() {
+                                    $('.v-bottom-striped .progress-bar').progressbar();
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+<code>&lt;div class=&quot;progress progress-striped vertical bottom&quot;&gt;
+    &lt;div class=&quot;progress-bar&quot; aria-valuenow=&quot;20&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress progress-striped vertical bottom&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-info&quot; aria-valuenow=&quot;40&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress progress-striped vertical bottom&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-success&quot; aria-valuenow=&quot;60&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress progress-striped vertical bottom&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-warning&quot; aria-valuenow=&quot;80&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress progress-striped vertical bottom&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-danger&quot; aria-valuenow=&quot;100&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code>
+                        </pre><br>
+                        <pre class="prettyprint">
+<code>$('.progress-bar').progressbar();</code>
+                        </pre>
+                    </div>
+                    <h3>animated progressbars <button type="button" class="btn btn-primary" id="v-bottom-animated">start</button></h3>
+                    <div class="bs-example vertical bottom v-bottom-animated">
+                        <div class="progress progress-striped vertical bottom wide active">
+                            <div class="progress-bar" aria-valuenow="20"></div>
+                        </div>
+                        <div class="progress progress-striped vertical bottom wide active">
+                            <div class="progress-bar progress-bar-info" aria-valuenow="40"></div>
+                        </div>
+                        <div class="progress progress-striped vertical bottom wide active">
+                            <div class="progress-bar progress-bar-success" aria-valuenow="60"></div>
+                        </div>
+                        <div class="progress progress-striped vertical bottom wide active">
+                            <div class="progress-bar progress-bar-warning" aria-valuenow="80"></div>
+                        </div>
+                        <div class="progress progress-striped vertical bottom wide active">
+                            <div class="progress-bar progress-bar-danger" aria-valuenow="100"></div>
+                        </div>
+                        <script type='text/javascript'>
+                            $(document).ready(function() {
+                                $('#v-bottom-animated').click(function() {
+                                    $('.v-bottom-animated .progress-bar').progressbar();
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+<code>&lt;div class=&quot;progress progress-striped vertical bottom wide active&quot;&gt;
+    &lt;div class=&quot;progress-bar&quot; aria-valuenow=&quot;20&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress progress-striped vertical bottom wide active&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-info&quot; aria-valuenow=&quot;40&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress progress-striped vertical bottom wide active&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-success&quot; aria-valuenow=&quot;60&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress progress-striped vertical bottom wide active&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-warning&quot; aria-valuenow=&quot;80&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress progress-striped vertical bottom wide active&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-danger&quot; aria-valuenow=&quot;100&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code>
+                        </pre><br>
+                        <pre class="prettyprint">
+<code>$('.progress-bar').progressbar();</code>
+                        </pre>
+                    </div>
+                    <h3>custom aria range <button type="button" class="btn btn-primary" id="v-bottom-aria">start</button></h3>
+                    <div class="bs-example vertical bottom v-bottom-aria">
+                        <div class="progress vertical bottom wide">
+                            <div class="progress-bar" aria-valuenow="2" aria-valuemin="1" aria-valuemax="6"></div>
+                        </div>
+                        <div class="progress vertical bottom wide">
+                            <div class="progress-bar progress-bar-info" aria-valuenow="40" aria-valuemin="-40" aria-valuemax="200"></div>
+                        </div>
+                        <div class="progress vertical bottom wide">
+                            <div class="progress-bar progress-bar-success" aria-valuenow="60" aria-valuemax="120"></div>
+                        </div>
+                        <div class="progress vertical bottom wide">
+                            <div class="progress-bar progress-bar-warning" aria-valuenow="80" aria-valuemin="30" ></div>
+                        </div>
+                        <div class="progress vertical bottom wide">
+                            <div class="progress-bar progress-bar-danger" aria-valuenow="100"></div>
+                        </div>
+                        <script type='text/javascript'>
+                            $(document).ready(function() {
+                                $('#v-bottom-aria').click(function() {
+                                    $('.v-bottom-aria .progress-bar').progressbar();
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+<code>&lt;div class=&quot;progress vertical bottom&quot;&gt;
+    &lt;div class=&quot;progress-bar&quot; aria-valuenow=&quot;2&quot; aria-valuemin=&quot;1&quot; aria-valuemax=&quot;6&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress vertical bottom&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-info&quot; aria-valuenow=&quot;40&quot; aria-valuemin=&quot;-40&quot; aria-valuemax=&quot;200&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress vertical bottom&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-success&quot; aria-valuenow=&quot;60&quot; aria-valuemax=&quot;120&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress vertical bottom&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-warning&quot; aria-valuenow=&quot;80&quot; aria-valuemin=&quot;30&quot; &gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress vertical bottom&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-danger&quot; aria-valuenow=&quot;100&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code>
+                        </pre><br>
+                        <pre class="prettyprint">
+<code>$('.progress-bar').progressbar();</code>
+                        </pre>
+                    </div>
+                    <h3>custom animations <button type="button" class="btn btn-primary" id="v-bottom-animation">start</button></h3>
+                    <div class="bs-example vertical bottom v-bottom-animation">
+                        <div class="progress vertical bottom wide">
+                            <div class="progress-bar six-sec-ease-in-out" aria-valuenow="20"></div>
+                        </div>
+                        <div class="progress vertical bottom wide">
+                            <div class="progress-bar progress-bar-info six-sec-ease-in-out" aria-valuenow="40"></div>
+                        </div>
+                        <div class="progress vertical bottom wide">
+                            <div class="progress-bar progress-bar-success six-sec-ease-in-out" aria-valuenow="60"></div>
+                        </div>
+                        <div class="progress vertical bottom wide">
+                            <div class="progress-bar progress-bar-warning six-sec-ease-in-out" aria-valuenow="80"></div>
+                        </div>
+                        <div class="progress vertical bottom wide">
+                            <div class="progress-bar progress-bar-danger six-sec-ease-in-out" aria-valuenow="100"></div>
+                        </div>
+                        <script type='text/javascript'>
+                            $(document).ready(function() {
+                                $('#v-bottom-animation').click(function() {
+                                    $('.v-bottom-animation .progress-bar').progressbar();
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+<code>.progress.vertical .progress-bar.six-sec-ease-in-out {
+    -webkit-transition: height 6s ease-in-out;
+    -moz-transition: height 6s ease-in-out;
+    -ms-transition: height 6s ease-in-out;
+    -o-transition: height 6s ease-in-out;
+    transition: height 6s ease-in-out;
+}
+</code>
+                        </pre><br>
+                        <pre class="prettyprint">
+<code>&lt;div class=&quot;progress vertical bottom&quot;&gt;
+    &lt;div class=&quot;progress-bar six-sec-ease-in-out&quot; aria-valuenow=&quot;20&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress vertical bottom&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-info six-sec-ease-in-out&quot; aria-valuenow=&quot;40&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress vertical bottom&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-success six-sec-ease-in-out&quot; aria-valuenow=&quot;60&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress vertical bottom&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-warning six-sec-ease-in-out&quot; aria-valuenow=&quot;80&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress vertical bottom&quot;&gt;
     &lt;div class=&quot;progress-bar progress-bar-danger six-sec-ease-in-out&quot; aria-valuenow=&quot;100&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;</code>
                         </pre><br>
