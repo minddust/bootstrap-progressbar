@@ -5,6 +5,7 @@
 * added bootstrap 3 support
 * added `noConflict` fallback
 * added striped styles
+* rename `filled` option to `fill`
 * switched `display_text` option dict to string setting
 * switched from jQuery's `*.attr('data-*')` to `*.data('*')` (yeah.. :D again)
 * switched license from Apache2 to MIT
