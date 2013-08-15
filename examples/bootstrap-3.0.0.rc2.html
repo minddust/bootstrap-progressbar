@@ -81,7 +81,7 @@
                     <ul class="nav bs-sidenav">
                         <li class="text-center"><strong>horizontal</strong></li>
                         <li>
-                            <a href="#h-default">default</a>
+                            <a href="#h-default">default settings</a>
                             <ul class="nav">
                                 <li><a href="#h-default-basic">basic</a></li>
                                 <li><a href="#h-default-themed">themed</a></li>
@@ -92,14 +92,36 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#h-filled">filled text</a>
+                            <a href="#h-fill">filled text</a>
                             <ul class="nav">
-                                <li><a href="#h-filled-basic">basic</a></li>
-                                <li><a href="#h-filled-themed">themed</a></li>
-                                <li><a href="#h-filled-striped">striped</a></li>
-                                <li><a href="#h-filled-animated">animated</a></li>
-                                <li><a href="#h-filled-aria">custom aria range</a></li>
-                                <li><a href="#h-filled-animation">custom animation</a></li>
+                                <li><a href="#h-fill-basic">basic</a></li>
+                                <li><a href="#h-fill-themed">themed</a></li>
+                                <li><a href="#h-fill-striped">striped</a></li>
+                                <li><a href="#h-fill-animated">animated</a></li>
+                                <li><a href="#h-fill-aria">custom aria range</a></li>
+                                <li><a href="#h-fill-animation">custom animation</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#h-center">centered text</a>
+                            <ul class="nav">
+                                <li><a href="#h-center-basic">basic</a></li>
+                                <li><a href="#h-center-themed">themed</a></li>
+                                <li><a href="#h-center-striped">striped</a></li>
+                                <li><a href="#h-center-animated">animated</a></li>
+                                <li><a href="#h-center-aria">custom aria range</a></li>
+                                <li><a href="#h-center-animation">custom animation</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#h-nonpercentage">nonpercentage filled text</a>
+                            <ul class="nav">
+                                <li><a href="#h-nonpercentage-basic">basic</a></li>
+                                <li><a href="#h-nonpercentage-themed">themed</a></li>
+                                <li><a href="#h-nonpercentage-striped">striped</a></li>
+                                <li><a href="#h-nonpercentage-animated">animated</a></li>
+                                <li><a href="#h-nonpercentage-aria">custom aria range</a></li>
+                                <li><a href="#h-nonpercentage-animation">custom animation</a></li>
                             </ul>
                         </li>
                         <li class="text-center"><strong>vertical</strong></li>
@@ -115,7 +137,7 @@
                 </div>
             </div>
             <div class="col-md-9">
-                <div class="bs-callout bs-callout-info">most examples have to be triggered manually by clicking the <button type="button" class="btn btn-primary" id="">start</button> button.</div>
+                <div class="bs-callout bs-callout-info">all examples have to be triggered manually by clicking the <button type="button" class="btn btn-primary" id="">start</button> button.</div>
                 <div class="bs-docs-section">
                     <div class="page-header">
                         <h1 id="h-default">default settings</h1>
@@ -296,18 +318,18 @@
                 </div>
                 <div class="bs-docs-section">
                     <div class="page-header">
-                        <h1 id="h-filled">filled text</h1>
+                        <h1 id="h-fill">filled text</h1>
                     </div>
                     <p class="lead">the following examples are showing how to display text on the filled bar.</p>
-                    <h3>basic progressbar <button type="button" class="btn btn-primary" id="h-filled-basic">start</button></h3>
-                    <div class="bs-example h-filled-basic">
+                    <h3>basic progressbar <button type="button" class="btn btn-primary" id="h-fill-basic">start</button></h3>
+                    <div class="bs-example h-fill-basic">
                         <div class="progress">
                             <div class="progress-bar" aria-valuenow="75"></div>
                         </div>
                         <script type='text/javascript'>
                             $(document).ready(function() {
-                                $('#h-filled-basic').click(function() {
-                                    $('.h-filled-basic .progress-bar').progressbar({display_text:'filled'});
+                                $('#h-fill-basic').click(function() {
+                                    $('.h-fill-basic .progress-bar').progressbar({display_text: 'fill'});
                                 });
                             });
                         </script>
@@ -316,8 +338,8 @@
                         <pre class="prettyprint">
                         </pre>
                     </div>
-                    <h3>themed progressbars <button type="button" class="btn btn-primary" id="h-filled-themed">start</button></h3>
-                    <div class="bs-example h-filled-themed">
+                    <h3>themed progressbars <button type="button" class="btn btn-primary" id="h-fill-themed">start</button></h3>
+                    <div class="bs-example h-fill-themed">
                         <div class="progress">
                             <div class="progress-bar progress-bar-info" aria-valuenow="40"></div>
                         </div>
@@ -332,8 +354,8 @@
                         </div>
                         <script type='text/javascript'>
                             $(document).ready(function() {
-                                $('#h-filled-themed').click(function() {
-                                    $('.h-filled-themed .progress-bar').progressbar({display_text:'filled'});
+                                $('#h-fill-themed').click(function() {
+                                    $('.h-fill-themed .progress-bar').progressbar({display_text: 'fill'});
                                 });
                             });
                         </script>
@@ -342,8 +364,8 @@
                         <pre class="prettyprint">
                         </pre>
                     </div>
-                    <h3>striped progressbars <button type="button" class="btn btn-primary" id="h-filled-striped">start</button></h3>
-                    <div class="bs-example h-filled-striped">
+                    <h3>striped progressbars <button type="button" class="btn btn-primary" id="h-fill-striped">start</button></h3>
+                    <div class="bs-example h-fill-striped">
                         <div class="progress progress-striped">
                             <div class="progress-bar" aria-valuenow="20"></div>
                         </div>
@@ -361,8 +383,8 @@
                         </div>
                         <script type='text/javascript'>
                             $(document).ready(function() {
-                                $('#h-filled-striped').click(function() {
-                                    $('.h-filled-striped .progress-bar').progressbar({display_text:'filled'});
+                                $('#h-fill-striped').click(function() {
+                                    $('.h-fill-striped .progress-bar').progressbar({display_text: 'fill'});
                                 });
                             });
                         </script>
@@ -371,8 +393,8 @@
                         <pre class="prettyprint">
                         </pre>
                     </div>
-                    <h3>animated progressbars <button type="button" class="btn btn-primary" id="h-filled-animated">start</button></h3>
-                    <div class="bs-example h-filled-animated">
+                    <h3>animated progressbars <button type="button" class="btn btn-primary" id="h-fill-animated">start</button></h3>
+                    <div class="bs-example h-fill-animated">
                         <div class="progress progress-striped active">
                             <div class="progress-bar" aria-valuenow="20"></div>
                         </div>
@@ -390,8 +412,8 @@
                         </div>
                         <script type='text/javascript'>
                             $(document).ready(function() {
-                                $('#h-filled-animated').click(function() {
-                                    $('.h-filled-animated .progress-bar').progressbar({display_text:'filled'});
+                                $('#h-fill-animated').click(function() {
+                                    $('.h-fill-animated .progress-bar').progressbar({display_text: 'fill'});
                                 });
                             });
                         </script>
@@ -400,8 +422,8 @@
                         <pre class="prettyprint">
                         </pre>
                     </div>
-                    <h3>custom aria ranges <button type="button" class="btn btn-primary" id="h-filled-aria">start</button></h3>
-                    <div class="bs-example h-filled-aria">
+                    <h3>custom aria ranges <button type="button" class="btn btn-primary" id="h-fill-aria">start</button></h3>
+                    <div class="bs-example h-fill-aria">
                         <div class="progress">
                             <div class="progress-bar" aria-valuenow="2" aria-valuemin="1" aria-valuemax="6"></div>
                         </div>
@@ -419,8 +441,8 @@
                         </div>
                         <script type='text/javascript'>
                             $(document).ready(function() {
-                                $('#h-filled-aria').click(function() {
-                                    $('.h-filled-aria .progress-bar').progressbar({display_text:'filled'});
+                                $('#h-fill-aria').click(function() {
+                                    $('.h-fill-aria .progress-bar').progressbar({display_text: 'fill'});
                                 });
                             });
                         </script>
@@ -429,8 +451,8 @@
                         <pre class="prettyprint">
                         </pre>
                     </div>
-                    <h3>custom animations <button type="button" class="btn btn-primary" id="h-filled-animation">start</button></h3>
-                    <div class="bs-example h-filled-animation">
+                    <h3>custom animations <button type="button" class="btn btn-primary" id="h-fill-animation">start</button></h3>
+                    <div class="bs-example h-fill-animation">
                         <div class="progress">
                             <div class="progress-bar six-sec-ease-in-out" aria-valuenow="20"></div>
                         </div>
@@ -448,8 +470,338 @@
                         </div>
                         <script type='text/javascript'>
                             $(document).ready(function() {
-                                $('#h-filled-animation').click(function() {
-                                    $('.h-filled-animation .progress-bar').progressbar({display_text:'filled'});
+                                $('#h-fill-animation').click(function() {
+                                    $('.h-fill-animation .progress-bar').progressbar({display_text: 'fill'});
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+                        </pre>
+                    </div>
+                </div>
+                <div class="bs-docs-section">
+                    <div class="page-header">
+                        <h1 id="h-center">centered text</h1>
+                    </div>
+                    <p class="lead">the following examples are showing how to display centered text on the bar.</p>
+                    <h3>basic progressbar <button type="button" class="btn btn-primary" id="h-center-basic">start</button></h3>
+                    <div class="bs-example h-center-basic">
+                        <div class="progress">
+                            <div class="progress-bar" aria-valuenow="75"></div>
+                        </div>
+                        <script type='text/javascript'>
+                            $(document).ready(function() {
+                                $('#h-center-basic').click(function() {
+                                    $('.h-center-basic .progress-bar').progressbar({display_text: 'center'});
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+                        </pre>
+                    </div>
+                    <h3>themed progressbars <button type="button" class="btn btn-primary" id="h-center-themed">start</button></h3>
+                    <div class="bs-example h-center-themed">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" aria-valuenow="25"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" aria-valuenow="49"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-warning" aria-valuenow="51"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger" aria-valuenow="75"></div>
+                        </div>
+                        <script type='text/javascript'>
+                            $(document).ready(function() {
+                                $('#h-center-themed').click(function() {
+                                    $('.h-center-themed .progress-bar').progressbar({display_text: 'center'});
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+                        </pre>
+                    </div>
+                    <h3>striped progressbars <button type="button" class="btn btn-primary" id="h-center-striped">start</button></h3>
+                    <div class="bs-example h-center-striped">
+                        <div class="progress progress-striped">
+                            <div class="progress-bar" aria-valuenow="25"></div>
+                        </div>
+                        <div class="progress progress-striped">
+                            <div class="progress-bar progress-bar-info" aria-valuenow="49"></div>
+                        </div>
+                        <div class="progress progress-striped">
+                            <div class="progress-bar progress-bar-success" aria-valuenow="50"></div>
+                        </div>
+                        <div class="progress progress-striped">
+                            <div class="progress-bar progress-bar-warning" aria-valuenow="51"></div>
+                        </div>
+                        <div class="progress progress-striped">
+                            <div class="progress-bar progress-bar-danger" aria-valuenow="75"></div>
+                        </div>
+                        <script type='text/javascript'>
+                            $(document).ready(function() {
+                                $('#h-center-striped').click(function() {
+                                    $('.h-center-striped .progress-bar').progressbar({display_text: 'center'});
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+                        </pre>
+                    </div>
+                    <h3>animated progressbars <button type="button" class="btn btn-primary" id="h-center-animated">start</button></h3>
+                    <div class="bs-example h-center-animated">
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar" aria-valuenow="25"></div>
+                        </div>
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-info" aria-valuenow="49"></div>
+                        </div>
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-success" aria-valuenow="50"></div>
+                        </div>
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-warning" aria-valuenow="51"></div>
+                        </div>
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-danger" aria-valuenow="75"></div>
+                        </div>
+                        <script type='text/javascript'>
+                            $(document).ready(function() {
+                                $('#h-center-animated').click(function() {
+                                    $('.h-center-animated .progress-bar').progressbar({display_text: 'center'});
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+                        </pre>
+                    </div>
+                    <h3>custom aria ranges <button type="button" class="btn btn-primary" id="h-center-aria">start</button></h3>
+                    <div class="bs-example h-center-aria">
+                        <div class="progress">
+                            <div class="progress-bar" aria-valuenow="2" aria-valuemin="1" aria-valuemax="6"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" aria-valuenow="40" aria-valuemin="-40" aria-valuemax="200"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" aria-valuenow="60" aria-valuemax="120"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-warning" aria-valuenow="80" aria-valuemin="30" ></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger" aria-valuenow="100"></div>
+                        </div>
+                        <script type='text/javascript'>
+                            $(document).ready(function() {
+                                $('#h-center-aria').click(function() {
+                                    $('.h-center-aria .progress-bar').progressbar({display_text: 'center'});
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+                        </pre>
+                    </div>
+                    <h3>custom animations <button type="button" class="btn btn-primary" id="h-center-animation">start</button></h3>
+                    <div class="bs-example h-center-animation">
+                        <div class="progress">
+                            <div class="progress-bar six-sec-ease-in-out" aria-valuenow="20"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info six-sec-ease-in-out" aria-valuenow="40"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success six-sec-ease-in-out" aria-valuenow="60"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-warning six-sec-ease-in-out" aria-valuenow="80"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger six-sec-ease-in-out" aria-valuenow="100"></div>
+                        </div>
+                        <script type='text/javascript'>
+                            $(document).ready(function() {
+                                $('#h-center-animation').click(function() {
+                                    $('.h-center-animation .progress-bar').progressbar({display_text: 'center'});
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+                        </pre>
+                    </div>
+                </div>
+                <div class="bs-docs-section">
+                    <div class="page-header">
+                        <h1 id="h-nonpercentage">nonpercentage filled text</h1>
+                    </div>
+                    <p class="lead">the following examples are showing how to display nonpercentage text on the bar.</p>
+                    <h3>basic progressbar <button type="button" class="btn btn-primary" id="h-nonpercentage-basic">start</button></h3>
+                    <div class="bs-example h-nonpercentage-basic">
+                        <div class="progress">
+                            <div class="progress-bar" aria-valuenow="100"></div>
+                        </div>
+                        <script type='text/javascript'>
+                            $(document).ready(function() {
+                                $('#h-nonpercentage-basic').click(function() {
+                                    $('.h-nonpercentage-basic .progress-bar').progressbar({display_text: 'fill', use_percentage: false});
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+                        </pre>
+                    </div>
+                    <h3>themed progressbars <button type="button" class="btn btn-primary" id="h-nonpercentage-themed">start</button></h3>
+                    <div class="bs-example h-nonpercentage-themed">
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" aria-valuenow="40"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" aria-valuenow="60"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-warning" aria-valuenow="80"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger" aria-valuenow="100"></div>
+                        </div>
+                        <script type='text/javascript'>
+                            $(document).ready(function() {
+                                $('#h-nonpercentage-themed').click(function() {
+                                    $('.h-nonpercentage-themed .progress-bar').progressbar({display_text: 'fill', use_percentage: false});
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+                        </pre>
+                    </div>
+                    <h3>striped progressbars <button type="button" class="btn btn-primary" id="h-nonpercentage-striped">start</button></h3>
+                    <div class="bs-example h-nonpercentage-striped">
+                        <div class="progress progress-striped">
+                            <div class="progress-bar" aria-valuenow="20"></div>
+                        </div>
+                        <div class="progress progress-striped">
+                            <div class="progress-bar progress-bar-info" aria-valuenow="40"></div>
+                        </div>
+                        <div class="progress progress-striped">
+                            <div class="progress-bar progress-bar-success" aria-valuenow="60"></div>
+                        </div>
+                        <div class="progress progress-striped">
+                            <div class="progress-bar progress-bar-warning" aria-valuenow="80"></div>
+                        </div>
+                        <div class="progress progress-striped">
+                            <div class="progress-bar progress-bar-danger" aria-valuenow="100"></div>
+                        </div>
+                        <script type='text/javascript'>
+                            $(document).ready(function() {
+                                $('#h-nonpercentage-striped').click(function() {
+                                    $('.h-nonpercentage-striped .progress-bar').progressbar({display_text: 'fill', use_percentage: false});
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+                        </pre>
+                    </div>
+                    <h3>animated progressbars <button type="button" class="btn btn-primary" id="h-nonpercentage-animated">start</button></h3>
+                    <div class="bs-example h-nonpercentage-animated">
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar" aria-valuenow="20"></div>
+                        </div>
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-info" aria-valuenow="40"></div>
+                        </div>
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-success" aria-valuenow="60"></div>
+                        </div>
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-warning" aria-valuenow="80"></div>
+                        </div>
+                        <div class="progress progress-striped active">
+                            <div class="progress-bar progress-bar-danger" aria-valuenow="100"></div>
+                        </div>
+                        <script type='text/javascript'>
+                            $(document).ready(function() {
+                                $('#h-nonpercentage-animated').click(function() {
+                                    $('.h-nonpercentage-animated .progress-bar').progressbar({display_text: 'fill', use_percentage: false});
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+                        </pre>
+                    </div>
+                    <h3>custom aria ranges <button type="button" class="btn btn-primary" id="h-nonpercentage-aria">start</button></h3>
+                    <div class="bs-example h-nonpercentage-aria">
+                        <div class="progress">
+                            <div class="progress-bar" aria-valuenow="2" aria-valuemin="1" aria-valuemax="6"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info" aria-valuenow="40" aria-valuemin="-40" aria-valuemax="200"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success" aria-valuenow="60" aria-valuemax="120"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-warning" aria-valuenow="80" aria-valuemin="30" ></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger" aria-valuenow="100"></div>
+                        </div>
+                        <script type='text/javascript'>
+                            $(document).ready(function() {
+                                $('#h-nonpercentage-aria').click(function() {
+                                    $('.h-nonpercentage-aria .progress-bar').progressbar({display_text: 'fill', use_percentage: false});
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+                        </pre>
+                    </div>
+                    <h3>custom animations <button type="button" class="btn btn-primary" id="h-nonpercentage-animation">start</button></h3>
+                    <div class="bs-example h-nonpercentage-animation">
+                        <div class="progress">
+                            <div class="progress-bar six-sec-ease-in-out" aria-valuenow="20"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info six-sec-ease-in-out" aria-valuenow="40"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success six-sec-ease-in-out" aria-valuenow="60"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-warning six-sec-ease-in-out" aria-valuenow="80"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger six-sec-ease-in-out" aria-valuenow="100"></div>
+                        </div>
+                        <script type='text/javascript'>
+                            $(document).ready(function() {
+                                $('#h-nonpercentage-animation').click(function() {
+                                    $('.h-nonpercentage-animation .progress-bar').progressbar({display_text: 'fill', use_percentage: false});
                                 });
                             });
                         </script>
