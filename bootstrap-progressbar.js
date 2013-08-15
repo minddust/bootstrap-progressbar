@@ -124,7 +124,7 @@
                         $front_text.text(text);
                     }
                 }
-                $this.attr('aira-valuenow', current_value);
+                $this.attr('aria-valuenow', current_value);
 
                 update(current_percentage);
             }, options.refresh_speed);
