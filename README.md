@@ -13,6 +13,8 @@
 * now with MIT license
 * code cleanup and style fixes
 
+> NOTE: this version is not 100% backwards compatible - please read the following information
+
 ## Demo
 
 * http://minddust.github.com/bootstrap-progressbar
@@ -32,43 +34,46 @@
     <script type="text/javascript" src="bootstrap-progressbar.js"></script>
     ```
 
-2. activate `bootstrap-progressbar` functionality on progressbars of your choice
+2. activate `bootstrap-progressbar` functionality on progressbars of your choice:
+
 
     ```javascript
-    $(document).ready(function() {
-        $('.progress .bar').progressbar();
-    });
+    $('.progress .bar').progressbar();           // bootstrap 2
+    $('.progress .progress-bar').progressbar();  // bootstrap 3
     ```
 
-3. set the `data` attribute and __remove__ the `width` style attribute (alternatively you can set it to 0)
+3. set the `aria` attribute and __remove__ the `width` style attribute (alternatively you can set it to 0)
 
-    1. `data-percentage`
+    1. `aria-valuetransitiongoal`
 
         ```html
-        <div class="progress progress-info">
-            <div class="bar" data-percentage="75"></div>
+        <div class="progress">
+            <div class="progress-bar" aria-valuetransitiongoal="75"></div>
         </div>
         ```
 
-    2. `data-amount-part` and `data-amount-total`
+    2. `aria-valuemin` (default: 0) and `aria-valuemax` (default: 100)
 
         ```html
-        <div class="progress progress-info">
-            <div class="bar" data-amount-part="1337" data-amount-total="9000"></div>
+        <div class="progress">
+            <div class="progress-bar" aria-valuetransitiongoal="75" aria-valuemin="-1337" aria-valuemax="9000"></div>
         </div>
 
 ## Usage Extended
 
-* Do i need the additional style file?
+* Do I need the additional style file?
 
     * for the horizontal bar with no or filled text: __NO__
     * for any vertical bars or the horizontal bar with centered text: __YES__
 
+       less:
+
        ```html
-       <link rel="stylesheet/less" type="text/css" href="bootstrap-progressbar.less">
+       <link rel="stylesheet/less" type="text/css" href="bootstrap-progressbar-2.x.x.less">
+       <link rel="stylesheet/less" type="text/css" href="bootstrap-progressbar-3.x.x.less">
        ```
 
-       or
+       css:
 
        ```html
        <link rel="stylesheet" type="text/css" href="bootstrap-progressbar.css">
