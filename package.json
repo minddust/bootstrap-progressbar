@@ -11,8 +11,8 @@
     },
     "devDependencies": {
         "grunt": "~0.4.1",
-        "grunt-contrib-concat": "~0.3.0",
+        "grunt-contrib-clean": "~0.5.0",
         "grunt-contrib-uglify": "~0.2.2",
-        "grunt-recess": "~0.3.3"
+        "grunt-recess": "~0.3.4"
     }
 }
