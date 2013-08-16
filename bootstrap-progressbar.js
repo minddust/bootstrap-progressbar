@@ -116,7 +116,7 @@
                 if (options.display_text !== 'none') {
                     text = options.use_percentage ? options.percent_format(current_percentage) : options.amount_format(current_value, aria_valuemax);
 
-                    if (options.display_text === 'fill'){
+                    if (options.display_text === 'fill') {
                         $this.text(text);
                     }
                     else if (options.display_text === 'center') {
