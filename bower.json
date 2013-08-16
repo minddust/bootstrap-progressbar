@@ -5,6 +5,7 @@
     "ignore": [
         "**/.*",
         "Gruntfile.js",
+        "bower_components",
         "examples",
         "node_modules",
         "resources"
