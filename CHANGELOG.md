@@ -1,6 +1,6 @@
 # Changelog
 
-### 0.6.0
+### 0.6.0 (2013-08-16)
 
 * added bootstrap 3 support
 * added `noConflict` fallback
