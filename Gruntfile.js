@@ -60,9 +60,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-recess');
 
+    grunt.registerTask('test', []);  // TODO: include tests task
     grunt.registerTask('dist-js', ['uglify']);
     grunt.registerTask('dist-css', ['recess']);
     grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js']);
 
-    grunt.registerTask('default', ['dist']);  // TODO: include tests task
+    grunt.registerTask('default', ['test', 'dist']);
 };
