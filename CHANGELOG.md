@@ -5,6 +5,7 @@
 * added bootstrap 3 support
 * added `noConflict` fallback
 * added striped styles
+* added custom string formatting
 * rename `filled` option to `fill`
 * switched `display_text` option dict to string setting
 * switched from `data` to `aria` attributes
