@@ -6,6 +6,7 @@
         "**/.*",
         "Gruntfile.js",
         "examples",
+        "node_modules",
         "resources"
     ]
 }
