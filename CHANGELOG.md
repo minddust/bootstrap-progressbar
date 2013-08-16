@@ -7,8 +7,9 @@
 * added striped styles
 * rename `filled` option to `fill`
 * switched `display_text` option dict to string setting
-* switched from jQuery's `*.attr('data-*')` to `*.data('*')` (yeah.. :D again)
+* switched from `data` to `aria` attributes
 * switched license from Apache2 to MIT
+* fixed some minor style issues
 
 ### 0.5.0
 

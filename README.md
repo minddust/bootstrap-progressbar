@@ -1,22 +1,27 @@
-# update coming this friday (02.08.13)  :cake: :tada:
+# bootstrap-progressbar - 0.6.0
 
-* switch to MIT license
+`bootstrap-progressbar` is a [jQuery](http://jquery.com) plugin which extends the basic [twitter-bootstrap](https://github.com/twbs/bootstrap) progressbar. It provides the ability to animate the progressbar by adding Javascript in combination with the preexisting css transitions. Additionally you can display the current progress information in the bar or get the value via callback.
+
+## What's new in v0.6.0?
+
 * bootstrap 3 support
+* aria support
+* custom string formatting
 * new demo page
 * code cleanup
-* ..
-
-note: dont work with stacked progressbars
-
-check this out - see you friday!
-
-# bootstrap-progressbar - 0.5.0
-
-`bootstrap-progressbar` is a [jQuery](http://jquery.com) plugin which extends the basic [twitter-bootstrap](http://twitter.github.com/bootstrap) progressbar. It provides the ability to animate the progressbar by adding Javascript in combination with the preexisting css transitions. Additionally you can display the current progress information in the bar or get the value via callback.
+* reduced lib size by 46% (now just 2.2kb minified)
+* :tada: :cake: :beer: :tada:
 
 ## Demo
 
 * http://minddust.github.com/bootstrap-progressbar
+
+## Installation
+
+* Download the latest release: [v0.6.0](https://github.com/minddust/bootstrap-progressbar/archive/v0.6.0.zip)
+* Clone the repository: `git clone git@github.com:minddust/bootstrap-progressbar.git`
+* Install with [Bower](http://bower.io): `bower install bootstrap-progressbar`
+
 
 ## Usage
 
