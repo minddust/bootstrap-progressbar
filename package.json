@@ -4,6 +4,7 @@
     "version": "0.6.0",
     "keywords": ["boostrap-progressbar", "progressbar"],
     "author": "Stephan Gross",
+    "scripts": { "test": "grunt test" },
     "repository": {
         "type": "git",
         "url": "https://github.com/minddust/bootstrap-progressbar"
