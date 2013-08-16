@@ -2,6 +2,7 @@
 
 `bootstrap-progressbar` is a [jQuery](http://jquery.com) plugin which extends the basic [twitter-bootstrap](https://github.com/twbs/bootstrap) progressbar. It provides the ability to animate the progressbar by adding Javascript in combination with the preexisting css transitions. Additionally you can display the current progress information in the bar or get the value via callback.
 
+
 ## What's new in v0.6.0? :tada:
 
 * bootstrap 3 support
@@ -13,11 +14,13 @@
 * now with MIT license
 * code cleanup and style fixes
 
-> NOTE: this version is not 100% backwards compatible - please read the following information
+> Note: this version is not 100% backwards compatible - please read the following information
+
 
 ## Demo
 
 * http://minddust.github.com/bootstrap-progressbar
+
 
 ## Installation
 
@@ -59,6 +62,7 @@
             <div class="progress-bar" aria-valuetransitiongoal="75" aria-valuemin="-1337" aria-valuemax="9000"></div>
         </div>
 
+
 ## Usage Extended
 
 * Do I need the additional style file?
@@ -67,119 +71,178 @@
     * for any vertical bars or the horizontal bar with centered text: __YES__
 
        less:
-
        ```html
-       <link rel="stylesheet/less" type="text/css" href="bootstrap-progressbar-2.x.x.less">
-       <link rel="stylesheet/less" type="text/css" href="bootstrap-progressbar-3.x.x.less">
+       <link rel="stylesheet/less" type="text/css" href="bootstrap-progressbar.less">
        ```
 
        css:
-
        ```html
        <link rel="stylesheet" type="text/css" href="bootstrap-progressbar.css">
        ```
 
 * Multiple trigger
 
-    You can trigger progressbar as much as you want. Just change your `data` attribute and trigger `.progressbar()` again. All settings made before will be kept. Please have a look at the demo page for a working example.
+    You can trigger progressbar as much as you want. Just change your `aria` attribute(s) and trigger `.progressbar()` again. All settings made before will be kept. 
+    
 
-## Customization
+## Settings
 
-1. alignment
-    * to use a horizontal progressbar which is align to the right you have to add `right` to the `progress` element
+### default values
 
-       ```html
-       <div class="progress right progress-info">
-       ```
-    * to use a vertical progressbar you have to add `vertical` to the `progress` element
+```javascript
+Progressbar.defaults = {
+    transition_delay: 300,
+    refresh_speed: 50,
+    display_text: 'none',
+    use_percentage: true,
+    percent_format: function(percent) { return percent + '%'; },
+    amount_format: function(amount_part, amount_total) { return amount_part + ' / ' + amount_total; },
+    update: $.noop,
+    done: $.noop,
+    fail: $.noop
+};
+```
 
-       ```html
-       <div class="progress vertical progress-info">
-       ```
-    * to use a vertical progressbar which is align to the bottom you have to add `vertical` and `bottom` to the `progress` element
+### transition_delay
 
-       ```html
-       <div class="progress vertical bottom progress-info">
-       ```
+Is the time in milliseconds until the animation starts.
 
-2. text and delay
+This could be useful to delay the start on the initial page load like:
 
-    simply add additional parameters when activating the script
-
-    ```javascript
-    $(document).ready(function() {
-        $('.progress .bar').progressbar({
-            transition_delay: 300,
-            refresh_speed: 50,
-            display_text: 2,
-            use_percentage: true,
-            update: doSomethingCool( current_percentage ) { .. },
-            done: doSomethingCool( ) { .. },
-            fail: doSomethingCool( error_message ) { .. },
-        });
+```javascript
+$(document).ready(function() {
+    $('.progress .progress-bar').progressbar({
+        transition_delay: 1500
     });
-    ```
-    * `transition_delay` is the time in milliseconds until the animation starts
-    * `refresh_speed` is the time in milliseconds which will elapse between every text refresh / callback call
-    * `display_text` determines whether the text will be displayed
-        * `0` __no text__ *(this mode doesn't change any css / html)*
-        * `1` __text on filled bar__ *(this mode doesn't change any css / html)*
-        * `2` __text on center__ *(this mode changes css / html due to styling requirements)*
-    * `use_percentage` determines whether the text will be displayed in percent or amount
-    * `update` callback where you can grab the actual percentage value
-    * `done` callback which indicates when progressbar is filled to the given value
-    * `fail` callback where you can grab an error message when something went wrong
+});
+```
 
-3. animation
+### refresh_speed
 
-    to change the animation itself you have to overwrite either less or css
+Is the time in milliseconds which will elapse between every text refresh, `aria-valuenow` attribute update and `update` callback call.
 
-    1. horizontal
-        * less
+### display_text
 
-            ```css
-            .progress .bar {
-                .transition(width 2s ease-in-out);
-            }
-            ```
-        * css
+Determines if and where to display text on the progressbar. Possible options:
 
-            ```css
-            .progress .bar {
-                -webkit-transition: width 2s ease-in-out;
-                -moz-transition: width 2s ease-in-out;
-                -ms-transition: width 2s ease-in-out;
-                -o-transition: width 2s ease-in-out;
-                transition: width 2s ease-in-out;
-            }
-            ```
+* `none` __no text__ 
+* `fill` __text on filled bar__ 
+* `center` __text on center__ *(this mode changes css / html due to styling requirements)*
 
-    1. vertical
-        * less
+### use_percentage
 
-            ```css
-            .progress.vertical .bar {
-                .transition(height 2s ease-in-out);
-            }
-            ```
-        * css
+If text will be displayed - this option determines whether to show the percentage value or the amount.
 
-            ```css
-            .progress.vertical .bar {
-                -webkit-transition: height 2s ease-in-out;
-                -moz-transition: height 2s ease-in-out;
-                -ms-transition: height 2s ease-in-out;
-                -o-transition: height 2s ease-in-out;
-                transition: height 2s ease-in-out;
-            }
-            ```
+So if `use_percentage` is false and `aria-valuemin` and `aria-valuemax` are not set (or to `0` and `100`) the value will be the same but `amount_format` will be used to format the result. 
+
+Example:
+
+`<div class="progress-bar" aria-valuetransitiongoal="75">` 
+
+with `use_percentage: true` is the final text: `75%`
+
+with `use_percentage: false` is the final text: `75 / 100`
+
+### percent_format
+
+Is a function which returns the text format for progressbar with `use_percentage: true`.
+
+It takes 1 argument which is the current percent value.
+
+### amount_format
+
+Is a function which returns the text format for progressbar with `use_percentage: false`.
+
+It takes 2 argument which are the current and total amount.
+
+### update
+
+Is a callback function which will be called while the progressbar is transitioning ;)
+
+Depends on `refresh_speed`.
+
+It takes 1 argument which is the current percent value.
+
+### done
+
+Is a callback function which will be called when the transition process is done.
+
+### fail
+
+Is a callback function which will be called when an error occurs.
+
+It takes 1 argument which is the error message.
+
+
+## Customisation
+
+### alignment
+* to use a horizontal progressbar which is align to the right you have to add `right` to the `progress` element.
+
+   ```html
+   <div class="progress right">
+   ```
+* to use a vertical progressbar you have to add `vertical` to the `progress` element.
+
+   ```html
+   <div class="progress vertical">
+   ```
+* to use a vertical progressbar which is align to the bottom you have to add `vertical` and `bottom` to the `progress` element.
+
+   ```html
+   <div class="progress vertical bottom">
+   ```
+
+### animation
+
+to change the animation itself you have to overwrite either less or css
+
+1. horizontal
+    * less
+
+        ```css
+        .progress .bar {
+            .transition(width 2s ease-in-out);
+        }
+        ```
+    * css
+
+        ```css
+        .progress .bar {
+            -webkit-transition: width 2s ease-in-out;
+            -moz-transition: width 2s ease-in-out;
+            -ms-transition: width 2s ease-in-out;
+            -o-transition: width 2s ease-in-out;
+            transition: width 2s ease-in-out;
+        }
+        ```
+
+1. vertical
+    * less
+
+        ```css
+        .progress.vertical .bar {
+            .transition(height 2s ease-in-out);
+        }
+        ```
+    * css
+
+        ```css
+        .progress.vertical .bar {
+            -webkit-transition: height 2s ease-in-out;
+            -moz-transition: height 2s ease-in-out;
+            -ms-transition: height 2s ease-in-out;
+            -o-transition: height 2s ease-in-out;
+            transition: height 2s ease-in-out;
+        }
+        ```
 
 ## Known Problems
 
 * Looks like iOS Safari is flooring the width of the transition. So if you want to display text with a correct value you have to use a full bar width **greater or equal 100px**.
 
-## License
+## Copyright and license
 
-Copyright 2012 [minddust.com](http://www.minddust.com)
+Copyright 2013-2013 Stephan Groß, under [MIT license](LICENSE).
 
-bootstrap-progressbar is published under Apache License, Version 2.0 (see LICENSE file).
+Want to appreciate my work? [minddust at Gittip](https://www.gittip.com/minddust/)
