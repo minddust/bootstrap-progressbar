@@ -1,0 +1,10 @@
+{
+    "name": "bootstrap-progressbar",
+    "version": "0.6.0",
+    "main": "./bootstrap-progressbar.js",
+    "ignore": [
+        ".gitignore",
+        "examples",
+        "resources"
+    ]
+}
