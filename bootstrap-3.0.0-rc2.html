@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" type="text/css" href="prettify/prettify.min.css">
     <link rel="stylesheet" type="text/css" href="bootstrap/bootstrap-3.0.0-rc2.min.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap-progressbar-3.0.0-rc2.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-progressbar-3.0.0-rc2.css">
 
     <style>
         /* awesome bootstrap style setup - thanks */
@@ -60,7 +60,7 @@
     <script type='text/javascript' src="jquery/jquery-1.8.3.min.js"></script>
     <script type='text/javascript' src="prettify/prettify.min.js"></script>
     <script type='text/javascript' src="bootstrap/bootstrap-3.0.0-rc2.min.js"></script>
-    <script type='text/javascript' src="bootstrap-progressbar.js"></script>
+    <script type='text/javascript' src="../bootstrap-progressbar.js"></script>
 
     <script type='text/javascript'>
         $(document).ready(function() {
@@ -222,6 +222,7 @@
                         <li><a href="#m-error">error</a></li>
                         <li><a href="#m-custom-percentage-format">custom percent format</a></li>
                         <li><a href="#m-custom-amount-format">custom amount format</a></li>
+                        <li><a href="#m-multi-trigger-0">multi trigger</a></li>
                     </ul>
                 </div>
             </div>
@@ -3857,6 +3858,69 @@
     display_text: 'center',
     use_percentage: false,
     amount_format: function(p, t) {return p + ' of ' + t;}
+});</code>
+                        </pre>
+                    </div>
+                    <h3>multi trigger <button type="button" class="btn btn-primary" id="m-multi-trigger-0">0</button> <button type="button" class="btn btn-primary" id="m-multi-trigger-50">50</button> <button type="button" class="btn btn-primary" id="m-multi-trigger-100">100</button></h3>
+                    <div class="bs-example m-multi-trigger">
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-info"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-success"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-warning"></div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger"></div>
+                        </div>
+                        <script type='text/javascript'>
+                            $(document).ready(function() {
+                                var $ps = $('.m-multi-trigger .progress-bar');
+                                $('#m-multi-trigger-0').click(function() {
+                                    $ps.attr('aria-valuetransitiongoal', 0).progressbar();
+                                });
+                                $('#m-multi-trigger-50').click(function() {
+                                    $ps.attr('aria-valuetransitiongoal', 50).progressbar();
+                                });
+                                $('#m-multi-trigger-100').click(function() {
+                                    $ps.attr('aria-valuetransitiongoal', 100).progressbar();
+                                });
+                            });
+                        </script>
+                    </div>
+                    <div class="highlight">
+                        <pre class="prettyprint">
+<code>&lt;div class=&quot;progress&quot;&gt;
+    &lt;div class=&quot;progress-bar&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-info&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-success&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-warning&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;progress&quot;&gt;
+    &lt;div class=&quot;progress-bar progress-bar-danger&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code>
+                        </pre><br>
+                        <pre class="prettyprint">
+<code>var $ps = $('.progress-bar');
+$('#m-multi-trigger-0').click(function() {
+    $ps.attr('aria-valuetransitiongoal', 0).progressbar();
+});
+$('#m-multi-trigger-50').click(function() {
+    $ps.attr('aria-valuetransitiongoal', 50).progressbar();
+});
+$('#m-multi-trigger-100').click(function() {
+    $ps.attr('aria-valuetransitiongoal', 100).progressbar();
 });</code>
                         </pre>
                     </div>
