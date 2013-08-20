@@ -1,5 +1,9 @@
 # Changelog
 
+### Master
+
+* added bootstrap 3.0.0 styles
+
 ### 0.6.0 (2013-08-16)
 
 * added bootstrap 3 support
