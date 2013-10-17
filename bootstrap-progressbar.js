@@ -106,7 +106,7 @@
                 current_percentage = Math.round(100 * this_size / parent_size);
                 current_value = Math.round(this_size / parent_size * (aria_valuemax - aria_valuemin));
 
-                if (current_percentage === percentage || intervalUpdate.prev_percentage === current_percentage) {
+                if (intervalUpdate.prev_percentage === current_percentage) {
                     current_percentage = percentage;
                     current_value = aria_valuetransitiongoal;
                     done();
