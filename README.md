@@ -3,7 +3,7 @@
 `bootstrap-progressbar` is a [jQuery](http://jquery.com) plugin which extends the basic [twitter-bootstrap](https://github.com/twbs/bootstrap) progressbar. It provides the ability to animate the progressbar by adding Javascript in combination with the preexisting css transitions. Additionally you can display the current progress information in the bar or get the value via callback.
 
 
-## What's new in v0.6.0? :tada:
+## What's new in v0.6.0?
 
 * bootstrap 3 support
 * `noConflict` fallback
@@ -71,21 +71,23 @@
     * for any vertical bars or the horizontal bar with centered text: __YES__
 
        less:
+
        ```html
        <link rel="stylesheet/less" type="text/css" href="bootstrap-progressbar.less">
        ```
 
        css:
+
        ```html
        <link rel="stylesheet" type="text/css" href="bootstrap-progressbar.css">
        ```
-       
-       you can find your needed css or less file inside the css or less folder. 
+
+       you can find your needed css or less file inside the css or less folder.
 
 * Multiple trigger
 
-    You can trigger progressbar as much as you want. Just change your `aria` attribute(s) and trigger `.progressbar()` again. All settings made before will be kept. 
-    
+    You can trigger progressbar as much as you want. Just change your `aria` attribute(s) and trigger `.progressbar()` again. All settings made before will be kept.
+
 
 ## Settings
 
@@ -127,19 +129,19 @@ Is the time in milliseconds which will elapse between every text refresh, `aria-
 
 Determines if and where to display text on the progressbar. Possible options:
 
-* `none` __no text__ 
-* `fill` __text on filled bar__ 
+* `none` __no text__
+* `fill` __text on filled bar__
 * `center` __text on center__ *(this mode changes css / html due to styling requirements)*
 
 ### use_percentage
 
 If text will be displayed - this option determines whether to show the percentage value or the amount.
 
-So if `use_percentage` is false and `aria-valuemin` and `aria-valuemax` are not set (or to `0` and `100`) the value will be the same but `amount_format` will be used to format the result. 
+So if `use_percentage` is false and `aria-valuemin` and `aria-valuemax` are not set (or to `0` and `100`) the value will be the same but `amount_format` will be used to format the result.
 
 Example:
 
-`<div class="progress-bar" aria-valuetransitiongoal="75">` 
+`<div class="progress-bar" aria-valuetransitiongoal="75">`
 
 with `use_percentage: true` is the final text: `75%`
 
@@ -245,6 +247,6 @@ to change the animation itself you have to overwrite either less or css
 
 ## Copyright and license
 
-Copyright 2012-2014 Stephan Groß, under [MIT license](https://github.com/minddust/bootstrap-progressbar/blob/master/LICENSE).
+Copyright 2013-2013 Stephan Groß, under [MIT license](https://github.com/minddust/bootstrap-progressbar/blob/master/LICENSE).
 
 Want to appreciate my work? [minddust at Gittip](https://www.gittip.com/minddust/)
