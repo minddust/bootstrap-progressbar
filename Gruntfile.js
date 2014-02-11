@@ -62,6 +62,53 @@ module.exports = function(grunt) {
             bs_3_0_3_min: { src: ['resources/bootstrap-progressbar-3.0.0.less'], dest: 'css/bootstrap-progressbar-3.0.3.min.css', options: { compress: true } },
             bs_3_1_0:     { src: ['resources/bootstrap-progressbar-3.0.0.less'], dest: 'css/bootstrap-progressbar-3.1.0.css' },
             bs_3_1_0_min: { src: ['resources/bootstrap-progressbar-3.0.0.less'], dest: 'css/bootstrap-progressbar-3.1.0.min.css', options: { compress: true } }
+        },
+
+        file_append: {
+            default_options: {
+                files: {
+                    'css/bootstrap-progressbar-2.0.0.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.0.0.min.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.0.1.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.0.1.min.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.0.2.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.0.2.min.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.0.3.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.0.3.min.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.0.4.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.0.4.min.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.1.0.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.1.0.min.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.1.1.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.1.1.min.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.2.0.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.2.0.min.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.2.1.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.2.1.min.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.2.2.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.2.2.min.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.3.0.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.3.0.min.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.3.1.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.3.1.min.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.3.2.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-2.3.2.min.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-3.0.0-rc1.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-3.0.0-rc1.min.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-3.0.0-rc2.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-3.0.0-rc2.min.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-3.0.0.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-3.0.0.min.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-3.0.1.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-3.0.1.min.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-3.0.2.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-3.0.2.min.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-3.0.3.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-3.0.3.min.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-3.1.0.css': { prepend: '<%= banner %>' },
+                    'css/bootstrap-progressbar-3.1.0.min.css': { prepend: '<%= banner %>' }
+                }
+            }
         }
     });
 
@@ -69,10 +116,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-recess');
+    grunt.loadNpmTasks('grunt-file-append');
 
     grunt.registerTask('test', []);  // TODO: include tests task
     grunt.registerTask('dist-js', ['uglify']);
-    grunt.registerTask('dist-css', ['recess']);
+    grunt.registerTask('dist-css', ['recess', 'file_append']);
     grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js']);
 
     grunt.registerTask('default', ['test', 'dist']);

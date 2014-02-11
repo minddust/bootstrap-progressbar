@@ -1,18 +1,24 @@
 {
-    "name": "bootstrap-progressbar",
-    "description": "progressbar interactions for twitter bootstrap 2 & 3",
-    "version": "0.6.0",
-    "keywords": ["boostrap-progressbar", "progressbar"],
-    "author": "Stephan Gross",
-    "scripts": { "test": "grunt test" },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/minddust/bootstrap-progressbar"
-    },
-    "devDependencies": {
-        "grunt": "~0.4.1",
-        "grunt-contrib-clean": "~0.5.0",
-        "grunt-contrib-uglify": "~0.2.2",
-        "grunt-recess": "~0.3.4"
-    }
+  "name": "bootstrap-progressbar",
+  "description": "progressbar interactions for twitter bootstrap 2 & 3",
+  "version": "0.6.0",
+  "keywords": [
+    "boostrap-progressbar",
+    "progressbar"
+  ],
+  "author": "Stephan Gross",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/minddust/bootstrap-progressbar"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-uglify": "~0.2.2",
+    "grunt-recess": "~0.3.4",
+    "grunt-file-append": "0.0.2"
+  }
 }
