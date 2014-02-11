@@ -2,7 +2,7 @@
 
 ### Master
 
-* added bootstrap 3.0.0 styles
+* added bootstrap 3.0.0-3.1.0 styles
 
 ### 0.6.0 (2013-08-16)
 
@@ -16,7 +16,7 @@
 * switched license from Apache2 to MIT
 * fixed some minor style issues
 
-### 0.5.0
+### 0.5.0 (2012-08-28)
 
 * added vertical progressbars
 * added right alignment
@@ -24,24 +24,24 @@
 * fixed some code formatting
 * fixed different font sizes
 
-### 0.4.6
+### 0.4.6 (2012-06-27)
 
 * fixed flickering on centered text on multiple trigger (due to last fix)
 
-### 0.4.5
+### 0.4.5 (2012-06-25)
 
 * fixed stacking bug on centered text on multiple trigger
 
-### 0.4.4
+### 0.4.4 (2012-06-13)
 
 * fixed caching bug with data method
 * added multitrigger support
 
-### 0.4.3
+### 0.4.3 (2012-06-11)
 
 * switched from jQuery's `*.attr('data-*')` to `*.data('*')`
 
-### 0.4.2
+### 0.4.2 (2012-06-07)
 
 * started changelog
 * switched to github markdown

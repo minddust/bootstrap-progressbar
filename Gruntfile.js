@@ -53,7 +53,15 @@ module.exports = function(grunt) {
             bs_3_0_0_rc2:     { src: ['resources/bootstrap-progressbar-3.0.0-rc2.less'], dest: 'css/bootstrap-progressbar-3.0.0-rc2.css' },
             bs_3_0_0_rc2_min: { src: ['resources/bootstrap-progressbar-3.0.0-rc2.less'], dest: 'css/bootstrap-progressbar-3.0.0-rc2.min.css', options: { compress: true } },
             bs_3_0_0:     { src: ['resources/bootstrap-progressbar-3.0.0.less'], dest: 'css/bootstrap-progressbar-3.0.0.css' },
-            bs_3_0_0_min: { src: ['resources/bootstrap-progressbar-3.0.0.less'], dest: 'css/bootstrap-progressbar-3.0.0.min.css', options: { compress: true } }
+            bs_3_0_0_min: { src: ['resources/bootstrap-progressbar-3.0.0.less'], dest: 'css/bootstrap-progressbar-3.0.0.min.css', options: { compress: true } },
+            bs_3_0_1:     { src: ['resources/bootstrap-progressbar-3.0.0.less'], dest: 'css/bootstrap-progressbar-3.0.1.css' },
+            bs_3_0_1_min: { src: ['resources/bootstrap-progressbar-3.0.0.less'], dest: 'css/bootstrap-progressbar-3.0.1.min.css', options: { compress: true } },
+            bs_3_0_2:     { src: ['resources/bootstrap-progressbar-3.0.0.less'], dest: 'css/bootstrap-progressbar-3.0.2.css' },
+            bs_3_0_2_min: { src: ['resources/bootstrap-progressbar-3.0.0.less'], dest: 'css/bootstrap-progressbar-3.0.2.min.css', options: { compress: true } },
+            bs_3_0_3:     { src: ['resources/bootstrap-progressbar-3.0.0.less'], dest: 'css/bootstrap-progressbar-3.0.3.css' },
+            bs_3_0_3_min: { src: ['resources/bootstrap-progressbar-3.0.0.less'], dest: 'css/bootstrap-progressbar-3.0.3.min.css', options: { compress: true } },
+            bs_3_1_0:     { src: ['resources/bootstrap-progressbar-3.0.0.less'], dest: 'css/bootstrap-progressbar-3.1.0.css' },
+            bs_3_1_0_min: { src: ['resources/bootstrap-progressbar-3.0.0.less'], dest: 'css/bootstrap-progressbar-3.1.0.min.css', options: { compress: true } }
         }
     });
 
