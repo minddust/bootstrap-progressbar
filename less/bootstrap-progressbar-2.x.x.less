@@ -51,7 +51,8 @@
   height: 100%;
   float: left;
   margin-right: @progressbarVerticalWidth;
-  #gradient > .horizontal(#f5f5f5, #f9f9f9);
+  #gradient > .vertical(#f5f5f5, #f9f9f9);
+  background-repeat: repeat;
 }
 
 .progress.vertical.bottom {
@@ -66,8 +67,8 @@
 .progress.vertical .bar {
   width: 100%;
   height: 0;
-  #gradient > .horizontal(#149bdf, #0480be);
   .transition(height .6s ease);
+  background-repeat: repeat;
 }
 
 .progress.vertical.bottom .bar {
@@ -77,7 +78,8 @@
 
 // Danger (red)
 .progress-danger.vertical .bar, .progress.vertical .bar-danger {
-  #gradient > .horizontal(#ee5f5b, #c43c35);
+  #gradient > .vertical(#ee5f5b, #c43c35);
+  background-repeat: repeat;
 }
 .progress-danger.progress-striped.vertical .bar, .progress.progress-striped.vertical .bar-danger {
   #gradient > .striped(#ee5f5b);
@@ -85,7 +87,8 @@
 
 // Success (green)
 .progress-success.vertical .bar, .progress.vertical .bar-success {
-  #gradient > .horizontal(#62c462, #57a957);
+  #gradient > .vertical(#62c462, #57a957);
+  background-repeat: repeat;
 }
 .progress-success.progress-striped.vertical .bar, .progress.progress-striped.vertical .bar-success {
   #gradient > .striped(#62c462);
@@ -93,7 +96,8 @@
 
 // Info (teal)
 .progress-info.vertical .bar, .progress.vertical .bar-info {
-  #gradient > .horizontal(#5bc0de, #339bb9);
+  #gradient > .vertical(#5bc0de, #339bb9);
+  background-repeat: repeat;
 }
 .progress-info.progress-striped.vertical .bar, .progress.progress-striped.vertical .bar-info {
   #gradient > .striped(#5bc0de);
@@ -101,7 +105,8 @@
 
 // Warning (orange)
 .progress-warning.vertical .bar, .progress.vertical .bar-warning {
-  #gradient > .horizontal(lighten(@orange, 15%), @orange);
+  #gradient > .vertical(lighten(@orange, 15%), @orange);
+  background-repeat: repeat;
 }
 .progress-warning.progress-striped.vertical .bar, .progress.progress-striped.vertical .bar-warning {
   #gradient > .striped(lighten(@orange, 15%));

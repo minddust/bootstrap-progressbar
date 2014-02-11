@@ -1,47 +1,49 @@
 # Changelog
 
-### Master
+### 0.7.0 (2014-02-11)
 
-* added bootstrap 3.0.0-3.1.0 styles
+* Add bootstrap 3.0.0-3.1.0 styles
+* Fix #22 wrong vertical styles for bootstrap 2.x
+* Fix #18 missing css requirement documentation
 
 ### 0.6.0 (2013-08-16)
 
-* added bootstrap 3 support
-* added `noConflict` fallback
-* added striped styles
-* added custom string formatting
-* rename `filled` option to `fill`
-* switched `display_text` option dict to string setting
-* switched from `data` to `aria` attributes
-* switched license from Apache2 to MIT
-* fixed some minor style issues
+* Add bootstrap 3 support
+* Add `noConflict` fallback
+* Add striped styles
+* Add custom string formatting
+* Rename `filled` option to `fill`
+* Switch `display_text` option dict to string setting
+* Switch from `data` to `aria` attributes
+* Switch license from Apache2 to MIT
+* Fix some minor style issues
 
 ### 0.5.0 (2012-08-28)
 
-* added vertical progressbars
-* added right alignment
-* moved styles to css/less
-* fixed some code formatting
-* fixed different font sizes
+* Add vertical progressbars
+* Add right alignment
+* Move styles to css/less
+* Fix some code formatting
+* Fix different font sizes
 
 ### 0.4.6 (2012-06-27)
 
-* fixed flickering on centered text on multiple trigger (due to last fix)
+* Fix flickering on centered text on multiple trigger (due to last fix)
 
 ### 0.4.5 (2012-06-25)
 
-* fixed stacking bug on centered text on multiple trigger
+* Fix stacking bug on centered text on multiple trigger
 
 ### 0.4.4 (2012-06-13)
 
-* fixed caching bug with data method
-* added multitrigger support
+* Fix caching bug with data method
+* Add multitrigger support
 
 ### 0.4.3 (2012-06-11)
 
-* switched from jQuery's `*.attr('data-*')` to `*.data('*')`
+* Switch from jQuery's `*.attr('data-*')` to `*.data('*')`
 
 ### 0.4.2 (2012-06-07)
 
-* started changelog
-* switched to github markdown
+* Start changelog
+* Switch to github markdown

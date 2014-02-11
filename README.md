@@ -1,20 +1,14 @@
-# bootstrap-progressbar - 0.6.0 [![Build Status](https://secure.travis-ci.org/minddust/bootstrap-progressbar.png)](http://travis-ci.org/minddust/bootstrap-progressbar)
+# bootstrap-progressbar - 0.7.0 [![Build Status](https://secure.travis-ci.org/minddust/bootstrap-progressbar.png)](http://travis-ci.org/minddust/bootstrap-progressbar)
 
 `bootstrap-progressbar` is a [jQuery](http://jquery.com) plugin which extends the basic [twitter-bootstrap](https://github.com/twbs/bootstrap) progressbar. It provides the ability to animate the progressbar by adding Javascript in combination with the preexisting css transitions. Additionally you can display the current progress information in the bar or get the value via callback.
 
 
-## What's new in v0.6.0?
+## What's new in v0.7.0?
 
-* bootstrap 3 support
-* `noConflict` fallback
-* aria support
-* custom string formatting
-* reduced lib size by 46% - just 2.2kb minified
-* new demo page
-* now with MIT license
-* code cleanup and style fixes
+* Add bootstrap 3.0.0-3.1.0 styles
+* Fix #22 wrong vertical styles for bootstrap 2.x
 
-> Note: this version is not 100% backwards compatible - please read the following information
+> Note: this version sets (fixes) some vertical styles which may affect (or brick) your styles. Please checkout the css or less before updating.
 
 
 ## Demo
@@ -24,7 +18,7 @@
 
 ## Installation
 
-* Download the latest release: [v0.6.0](https://github.com/minddust/bootstrap-progressbar/archive/v0.6.0.zip)
+* Download the latest release: [v0.7.0](https://github.com/minddust/bootstrap-progressbar/archive/v0.7.0.zip)
 * Clone the repository: `git clone git@github.com:minddust/bootstrap-progressbar.git`
 * Install with [Bower](http://bower.io): `bower install bootstrap-progressbar`
 
@@ -247,6 +241,6 @@ to change the animation itself you have to overwrite either less or css
 
 ## Copyright and license
 
-Copyright 2013-2013 Stephan Groß, under [MIT license](https://github.com/minddust/bootstrap-progressbar/blob/master/LICENSE).
+Copyright 2013-2014 Stephan Groß, under [MIT license](https://github.com/minddust/bootstrap-progressbar/blob/master/LICENSE).
 
 Want to appreciate my work? [minddust at Gittip](https://www.gittip.com/minddust/)
