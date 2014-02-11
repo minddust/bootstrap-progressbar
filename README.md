@@ -68,7 +68,7 @@
 * Do I need the additional style file?
 
     * for the horizontal bar with no or filled text: __NO__
-    * for any vertical bars or the horizontal bar with centered text: __YES__
+    * for any vertical bars or the horizontal bar with centered text or right aligned bar: __YES__
 
        less:
 
