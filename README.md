@@ -245,6 +245,6 @@ to change the animation itself you have to overwrite either less or css
 
 ## Copyright and license
 
-Copyright 2013-2013 Stephan Groß, under [MIT license](LICENSE).
+Copyright 2012-2014 Stephan Groß, under [MIT license](https://github.com/minddust/bootstrap-progressbar/blob/master/LICENSE).
 
 Want to appreciate my work? [minddust at Gittip](https://www.gittip.com/minddust/)
