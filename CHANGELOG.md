@@ -1,5 +1,14 @@
 # Changelog
 
+### 0.7.1 (2014-03-05)
+
+* Add bootstrap 3.1.1 styles
+* Switch to Gulp
+* Remove bs dotfiles
+* Fix #30 compile errors with old markup
+* Fix #29 wrong style generation
+* Fix #28 element creation which will brick with `django-compressor`
+
 ### 0.7.0 (2014-02-11)
 
 * Add bootstrap 3.0.0-3.1.0 styles

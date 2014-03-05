@@ -1,5 +1,5 @@
 /*!
- * bootstrap-progressbar v0.7.0 by @minddust
+ * bootstrap-progressbar v0.7.1 by @minddust
  * Copyright (c) 2012-2014 Stephan Gross
  *
  * https://www.minddust.com/bootstrap-progressbar
@@ -52,8 +52,8 @@
         var percentage = Math.round(100 * (aria_valuetransitiongoal - aria_valuemin) / (aria_valuemax - aria_valuemin));
 
         if (options.display_text === 'center' && !$back_text && !$front_text) {
-            this.$back_text = $back_text = $('<span>', {class: 'progressbar-back-text'}).prependTo($parent);
-            this.$front_text = $front_text = $('<span>', {class: 'progressbar-front-text'}).prependTo($this);
+            this.$back_text = $back_text = $('<span>').addClass('progressbar-back-text').prependTo($parent);
+            this.$front_text = $front_text = $('<span>').addClass('progressbar-front-text').prependTo($this);
 
             var parent_size;
 

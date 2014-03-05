@@ -1,10 +1,10 @@
 {
     "name": "bootstrap-progressbar",
-    "version": "0.7.0",
+    "version": "0.7.1",
     "main": "./bootstrap-progressbar.js",
     "ignore": [
         "**/.*",
-        "Gruntfile.js",
+        "Gulpfile.js",
         "bower_components",
         "examples",
         "node_modules",
