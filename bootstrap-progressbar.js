@@ -126,7 +126,7 @@
                 }
                 $this.attr('aria-valuenow', current_value);
 
-                update(current_percentage);
+                update(current_percentage, $this);
             }, options.refresh_speed);
         }, options.transition_delay);
     };
