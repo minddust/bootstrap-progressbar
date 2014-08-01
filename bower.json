@@ -1,6 +1,6 @@
 {
     "name": "bootstrap-progressbar",
-    "version": "0.7.1",
+    "version": "0.8.0",
     "main": "./bootstrap-progressbar.js",
     "ignore": [
         "**/.*",

@@ -1,28 +1,31 @@
-# bootstrap-progressbar - 0.7.1 [![Build Status](https://secure.travis-ci.org/minddust/bootstrap-progressbar.png)](http://travis-ci.org/minddust/bootstrap-progressbar)
+# bootstrap-progressbar - 0.8.0
 
 `bootstrap-progressbar` is a [jQuery](http://jquery.com) plugin which extends the basic [twitter-bootstrap](https://github.com/twbs/bootstrap) progressbar. It provides the ability to animate the progressbar by adding Javascript in combination with the preexisting css transitions. Additionally you can display the current progress information in the bar or get the value via callback.
 
 
-## What's new in v0.7.1?
+## What's new in v0.8.0?
 
-* Add bootstrap 3.1.1 styles
-* Switch to Gulp
-* Remove bs dotfiles
-* Fix #30 compile errors with old markup
-* Fix #29 wrong style generation
-* Fix #28 element creation which will brick with `django-compressor`
+* Add bootstrap 3.2.0 styles
+* Extend `amount_format` hook for min value
+* Update demo page
+* Remove unused travis badge
+* Fix #27 switch `aria-valuetransitionsgoal` to `data-transitionsgoal`
 
-> Note: this version sets (fixes) some vertical styles which may affect (or brick) your styles. Please checkout the css or less before updating.
+> __Note__: this version replaces the not official supported `aria-valuetransitionsgoal` with `data-transitionsgoal` which may affect (or brick) your progressbars.
+
+> __Note__: Bootstrap's [low percentage styles](http://getbootstrap.com/components/#progress-low-percentages) (introduced in 3.2.0) causes flickring under some circumstances (e.g. slow transitions). I'm currently working on 0.8.1 to fix that.
+
+> __Note__: Stacked progressbars are not supported by now.
 
 
 ## Demo
 
-* http://minddust.github.com/bootstrap-progressbar
+* http://www.minddust.com/project/bootstrap-progressbar/demo/
 
 
 ## Installation
 
-* Download the latest release: [v0.7.1](https://github.com/minddust/bootstrap-progressbar/archive/v0.7.1.zip)
+* Download the latest release: [v0.8.0](https://github.com/minddust/bootstrap-progressbar/archive/v0.8.0.zip)
 * Clone the repository: `git clone git@github.com:minddust/bootstrap-progressbar.git`
 * Install with [Bower](http://bower.io): `bower install bootstrap-progressbar`
 
@@ -45,11 +48,11 @@
 
 3. set the `aria` attribute and __remove__ the `width` style attribute (alternatively you can set it to 0)
 
-    1. `aria-valuetransitiongoal`
+    1. `data-transitiongoal`
 
         ```html
         <div class="progress">
-            <div class="progress-bar" aria-valuetransitiongoal="75"></div>
+            <div class="progress-bar" data-transitiongoal="75"></div>
         </div>
         ```
 
@@ -57,8 +60,9 @@
 
         ```html
         <div class="progress">
-            <div class="progress-bar" aria-valuetransitiongoal="75" aria-valuemin="-1337" aria-valuemax="9000"></div>
+            <div class="progress-bar" data-transitiongoal="75" aria-valuemin="-1337" aria-valuemax="9000"></div>
         </div>
+        ```
 
 
 ## Usage Extended
@@ -84,7 +88,7 @@
 
 * Multiple trigger
 
-    You can trigger progressbar as much as you want. Just change your `aria` attribute(s) and trigger `.progressbar()` again. All settings made before will be kept.
+    You can trigger progressbar as much as you want. Just change your attribute(s) and trigger `.progressbar()` again. All settings made before will be kept.
 
 
 ## Settings
@@ -139,7 +143,7 @@ So if `use_percentage` is false and `aria-valuemin` and `aria-valuemax` are not 
 
 Example:
 
-`<div class="progress-bar" aria-valuetransitiongoal="75">`
+`<div class="progress-bar" data-transitiongoal="75">`
 
 with `use_percentage: true` is the final text: `75%`
 

@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.8.0 (2014-07-31)
+
+* Add bootstrap 3.2.0 styles
+* Extend `amount_format` hook for min value
+* Update demo page
+* Remove unused travis badge
+* Fix #27 switch `aria-valuetransitionsgoal` to `data-transitionsgoal`
+
 ### 0.7.1 (2014-03-05)
 
 * Add bootstrap 3.1.1 styles
