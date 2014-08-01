@@ -6,7 +6,6 @@
         "**/.*",
         "Gulpfile.js",
         "bower_components",
-        "examples",
         "node_modules",
         "resources"
     ]
