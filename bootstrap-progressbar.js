@@ -1,5 +1,5 @@
 /*!
- * bootstrap-progressbar v0.8.0 by @minddust
+ * bootstrap-progressbar v0.8.1 by @minddust
  * Copyright (c) 2012-2014 Stephan Groß
  *
  * http://www.minddust.com/project/bootstrap-progressbar/
@@ -37,15 +37,15 @@
         var $back_text = this.$back_text;
         var $front_text = this.$front_text;
         var options = this.options;
-        var data_transitiongoal = $this.attr('data-transitiongoal');
-        var aria_valuemin = $this.attr('aria-valuemin') || 0;
-        var aria_valuemax = $this.attr('aria-valuemax') || 100;
+        var data_transitiongoal = parseInt($this.attr('data-transitiongoal'));
+        var aria_valuemin = parseInt($this.attr('aria-valuemin')) || 0;
+        var aria_valuemax = parseInt($this.attr('aria-valuemax')) || 100;
         var is_vertical = $parent.hasClass('vertical');
         var update = options.update && typeof options.update === 'function' ? options.update : Progressbar.defaults.update;
         var done = options.done && typeof options.done === 'function' ? options.done : Progressbar.defaults.done;
         var fail = options.fail && typeof options.fail === 'function' ? options.fail : Progressbar.defaults.fail;
 
-        if (!data_transitiongoal) {
+        if (isNaN(data_transitiongoal)) {
             fail('data-transitiongoal not set');
             return;
         }
@@ -104,7 +104,7 @@
                 }
 
                 current_percentage = Math.round(100 * this_size / parent_size);
-                current_value = Math.round(this_size / parent_size * (aria_valuemax - aria_valuemin));
+                current_value = Math.round(aria_valuemin + this_size / parent_size * (aria_valuemax - aria_valuemin));
 
                 if (current_percentage >= percentage) {
                     current_percentage = percentage;
