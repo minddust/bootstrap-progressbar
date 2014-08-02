@@ -1,9 +1,9 @@
-# bootstrap-progressbar - 0.8.1
+# bootstrap-progressbar - 0.8.2
 
 `bootstrap-progressbar` is a [jQuery](http://jquery.com) plugin which extends the basic [twitter-bootstrap](https://github.com/twbs/bootstrap) progressbar. It provides the ability to animate the progressbar by adding Javascript in combination with the preexisting css transitions. Additionally you can display the current progress information in the bar or get the value via callback.
 
 
-## What's new in v0.8.1?
+## What's new in v0.8.2?
 
 * Add bootstrap 3.2.0 styles
 * Extend `amount_format` hook for min value
@@ -15,7 +15,7 @@
 
 > __Note__: this version replaces the not official supported `aria-valuetransitionsgoal` with `data-transitionsgoal` which may affect (or brick) your progressbars.
 
-> __Note__: Bootstrap's [low percentage styles](http://getbootstrap.com/components/#progress-low-percentages) (introduced in 3.2.0) causes flickring under some circumstances (e.g. slow transitions). I'm currently working on 0.8.2 to fix that.
+> __Note__: Bootstrap's [low percentage styles](http://getbootstrap.com/components/#progress-low-percentages) (introduced in 3.2.0) causes flickring under some circumstances (e.g. slow transitions). I'm currently working on 0.8.3 to fix that.
 
 > __Note__: Stacked progressbars are not supported by now.
 
@@ -27,7 +27,7 @@
 
 ## Installation
 
-* Download the latest release: [v0.8.1](https://github.com/minddust/bootstrap-progressbar/archive/v0.8.1.zip)
+* Download the latest release: [v0.8.2](https://github.com/minddust/bootstrap-progressbar/archive/v0.8.2.zip)
 * Clone the repository: `git clone git@github.com:minddust/bootstrap-progressbar.git`
 * Install with [Bower](http://bower.io): `bower install bootstrap-progressbar`
 
