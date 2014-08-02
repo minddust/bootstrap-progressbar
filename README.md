@@ -11,6 +11,7 @@
 * Remove unused travis badge
 * Fix #27 switch `aria-valuetransitionsgoal` to `data-transitionsgoal`
 * Fix #35 wrong amount calculation for `aria-valuemin` != 0
+* Fix #33 pass `$this` to `update` and `done` callback
 
 > __Note__: this version replaces the not official supported `aria-valuetransitionsgoal` with `data-transitionsgoal` which may affect (or brick) your progressbars.
 
@@ -160,7 +161,7 @@ It takes 1 argument which is the current percent value.
 
 Is a function which returns the text format for progressbar with `use_percentage: false`.
 
-It takes 2 argument which are the current and total amount.
+It takes 3 argument which are the current-, the max- and the min-amount.
 
 ### update
 
@@ -168,11 +169,13 @@ Is a callback function which will be called while the progressbar is transitioni
 
 Depends on `refresh_speed`.
 
-It takes 1 argument which is the current percent value.
+It takes 2 argument which is the current percent value and a reference to the attached progressbar element.
 
 ### done
 
 Is a callback function which will be called when the transition process is done.
+
+It takes 1 argument which is a reference to the attached progressbar element.
 
 ### fail
 

@@ -1,5 +1,5 @@
 /*!
- * bootstrap-progressbar v0.8.1 by @minddust
+ * bootstrap-progressbar v0.8.2 by @minddust
  * Copyright (c) 2012-2014 Stephan Groß
  *
  * http://www.minddust.com/project/bootstrap-progressbar/
@@ -109,7 +109,7 @@
                 if (current_percentage >= percentage) {
                     current_percentage = percentage;
                     current_value = data_transitiongoal;
-                    done();
+                    done($this);
                     clearInterval(progress);
                 }
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.2 (2014-08-02)
+
+* Fix #33 pass `$this` to `update` and `done` callback
+
 ## 0.8.1 (2014-08-01)
 
 * Fix #35 wrong amount calculation for `aria-valuemin` != 0
