@@ -2,7 +2,7 @@
 
 ## 0.8.3 (2014-08-02)
 
-# Fix #39 revert low percentage styles in bootstrap 3.2
+* Fix #39 revert low percentage styles in bootstrap 3.2
 
 ## 0.8.2 (2014-08-02)
 
