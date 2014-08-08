@@ -1,57 +1,4 @@
-/*! bootstrap-progressbar v0.8.2 | Copyright (c) 2012-2014 Stephan Groß | MIT license | minddust.com */
-.progress {
-  position: relative;
-}
-.progress .progress-bar {
-  position: absolute;
-  overflow: hidden;
-  line-height: 20px;
-}
-.progress .progressbar-back-text {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  font-size: 12px;
-  line-height: 20px;
-  text-align: center;
-}
-.progress .progressbar-front-text {
-  display: block;
-  width: 100%;
-  font-size: 12px;
-  line-height: 20px;
-  text-align: center;
-}
-.progress.right .progress-bar {
-  right: 0;
-}
-.progress.right .progressbar-front-text {
-  position: absolute;
-  right: 0;
-}
-.progress.vertical {
-  width: 20px;
-  height: 100%;
-  float: left;
-  margin-right: 20px;
-}
-.progress.vertical.bottom {
-  position: relative;
-}
-.progress.vertical.bottom .progressbar-front-text {
-  position: absolute;
-  bottom: 0;
-}
-.progress.vertical .progress-bar {
-  width: 100%;
-  height: 0;
-  -webkit-transition: height 0.6s ease;
-  transition: height 0.6s ease;
-}
-.progress.vertical.bottom .progress-bar {
-  position: absolute;
-  bottom: 0;
-}
+/*! bootstrap-progressbar v0.8.3 | Copyright (c) 2012-2014 Stephan Groß | MIT license | http://www.minddust.com */
 @-webkit-keyframes progress-bar-stripes {
   from {
     background-position: 40px 0;
@@ -127,4 +74,57 @@
 .progress-striped .progress-bar-danger {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+}
+.progress {
+  position: relative;
+}
+.progress .progress-bar {
+  position: absolute;
+  overflow: hidden;
+  line-height: 20px;
+}
+.progress .progressbar-back-text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+}
+.progress .progressbar-front-text {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+}
+.progress.right .progress-bar {
+  right: 0;
+}
+.progress.right .progressbar-front-text {
+  position: absolute;
+  right: 0;
+}
+.progress.vertical {
+  width: 20px;
+  height: 100%;
+  float: left;
+  margin-right: 20px;
+}
+.progress.vertical.bottom {
+  position: relative;
+}
+.progress.vertical.bottom .progressbar-front-text {
+  position: absolute;
+  bottom: 0;
+}
+.progress.vertical .progress-bar {
+  width: 100%;
+  height: 0;
+  -webkit-transition: height 0.6s ease;
+  transition: height 0.6s ease;
+}
+.progress.vertical.bottom .progress-bar {
+  position: absolute;
+  bottom: 0;
 }

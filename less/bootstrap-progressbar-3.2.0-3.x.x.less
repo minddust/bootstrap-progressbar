@@ -72,3 +72,36 @@
   position: absolute;
   bottom: 0;
 }
+
+// bootstrap-progressbar reverted low percentages styles
+// -----------------------------------------------------
+
+.progress-bar {
+  &[aria-valuenow="1"],
+  &[aria-valuenow="2"] {
+    min-width: 0;
+  }
+
+  &[aria-valuenow="0"] {
+    color: @progress-bar-color;
+    min-width: 0;
+    background-color: @progress-bar-bg;
+    .box-shadow(inset 0 -1px 0 rgba(0,0,0,.15));
+
+    &.progress-bar-success {
+      .progress-bar-variant(@progress-bar-success-bg);
+    }
+
+    &.progress-bar-info {
+      .progress-bar-variant(@progress-bar-info-bg);
+    }
+
+    &.progress-bar-warning {
+      .progress-bar-variant(@progress-bar-warning-bg);
+    }
+
+    &.progress-bar-danger {
+      .progress-bar-variant(@progress-bar-danger-bg);
+    }
+  }
+}
