@@ -38,6 +38,7 @@ var paths = {
         './resources/bootstrap-progressbar-3.1.0.less',
         './resources/bootstrap-progressbar-3.1.1.less',
         './resources/bootstrap-progressbar-3.2.0.less',
+        './resources/bootstrap-progressbar-3.3.0.less',
     ]
 };
 
