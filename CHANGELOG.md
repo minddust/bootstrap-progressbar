@@ -1,5 +1,9 @@
 # Changelog
 
+## Master
+
+* Fix #42 wrong version name
+
 ## 0.8.4 (2014-11-05)
 
 * Add bootstrap 3.3.0 styles
