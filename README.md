@@ -1,10 +1,14 @@
-# bootstrap-progressbar - 0.8.4
+# bootstrap-progressbar - 0.8.5
 
 `bootstrap-progressbar` is a [jQuery](http://jquery.com) plugin which extends the basic [twitter-bootstrap](https://github.com/twbs/bootstrap) progressbar. It provides the ability to animate the progressbar by adding Javascript in combination with the preexisting css transitions. Additionally you can display the current progress information in the bar or get the value via callback.
 
 
-## What's new in v0.8.0 - v0.8.4?
+## What's new in v0.8.0 - v0.8.5?
 
+* Add SCSS support
+* Add bootstrap 3.3.4 styles
+* Add bootstrap 3.3.2 styles
+* Add bootstrap 3.3.1 styles
 * Add bootstrap 3.3.0 styles
 * Add bootstrap 3.2.0 styles
 * Extend `amount_format` hook for min value
@@ -29,7 +33,7 @@
 
 ## Installation
 
-* Download the latest release: [v0.8.4](https://github.com/minddust/bootstrap-progressbar/archive/v0.8.4.zip)
+* Download the latest release: [v0.8.5](https://github.com/minddust/bootstrap-progressbar/archive/v0.8.5.zip)
 * Clone the repository: `git clone git@github.com:minddust/bootstrap-progressbar.git`
 * Install with [Bower](http://bower.io): `bower install bootstrap-progressbar`
 
@@ -255,6 +259,6 @@ to change the animation itself you have to overwrite either less or css
 
 ## Copyright and license
 
-Copyright 2013-2014 Stephan Groß, under [MIT license](https://github.com/minddust/bootstrap-progressbar/blob/master/LICENSE).
+Copyright 2013-2015 Stephan Groß, under [MIT license](https://github.com/minddust/bootstrap-progressbar/blob/master/LICENSE).
 
 Want to appreciate my work? [minddust at Gittip](https://www.gittip.com/minddust/)
