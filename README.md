@@ -80,19 +80,25 @@
     * for the horizontal bar with no or filled text: __NO__
     * for any vertical bars or the horizontal bar with centered text or right aligned bar: __YES__
 
-       less:
+        less:
 
-       ```html
-       <link rel="stylesheet/less" type="text/css" href="bootstrap-progressbar.less">
-       ```
+        ```html
+        <link rel="stylesheet/less" type="text/css" href="bootstrap-progressbar.less">
+        <script src="less.js" type="text/javascript"></script>
+        ```
 
-       css:
+        or precompile it yourself. (see: [3rd party compilers](http://lesscss.org/usage/#third-party-compilers-node-js-compilers))
 
-       ```html
-       <link rel="stylesheet" type="text/css" href="bootstrap-progressbar.css">
-       ```
+        scss:
+        * need to precompile it yourself (see: [libsass](http://sass-lang.com/libsass))
 
-       you can find your needed css or less file inside the css or less folder.
+        css:
+
+        ```html
+        <link rel="stylesheet" type="text/css" href="bootstrap-progressbar.css">
+        ```
+
+        you can find your needed css, less or scss files inside the specific subdirectories.
 
 * Multiple trigger
 
@@ -221,6 +227,13 @@ to change the animation itself you have to overwrite either less or css
             .transition(width 2s ease-in-out);
         }
         ```
+    * scss
+
+        ```css
+        .progress.vertical .progress-bar {
+            @include transition(width 2s ease-in-out);
+        }
+        ```
     * css
 
         ```css
@@ -239,6 +252,13 @@ to change the animation itself you have to overwrite either less or css
         ```css
         .progress.vertical .bar {
             .transition(height 2s ease-in-out);
+        }
+        ```
+    * scss
+
+        ```css
+        .progress.vertical .bar {
+            @include transition(height 2s ease-in-out);
         }
         ```
     * css
