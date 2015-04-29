@@ -20,6 +20,6 @@
         "tasks"
     ],
     "dependencies": [
-        "jquery": "~2.1"
+        "jquery": ">=2.0.0"
     ]
 }
