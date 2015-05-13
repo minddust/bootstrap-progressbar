@@ -143,6 +143,10 @@
             var data = $this.data('bs.progressbar');
             var options = typeof option === 'object' && option;
 
+            if (data && options) {
+                $.extend(data.options, options);
+            }
+
             if (!data) {
                 $this.data('bs.progressbar', (data = new Progressbar(this, options)));
             }
