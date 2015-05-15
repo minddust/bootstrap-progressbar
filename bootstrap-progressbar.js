@@ -1,6 +1,6 @@
 /*!
- * bootstrap-progressbar v0.8.5 by @minddust
- * Copyright (c) 2012-2014 Stephan Groß
+ * bootstrap-progressbar v0.9.0 by @minddust
+ * Copyright (c) 2012-2015 Stephan Groß
  *
  * http://www.minddust.com/project/bootstrap-progressbar/
  *
