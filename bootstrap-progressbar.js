@@ -93,7 +93,7 @@
                 $this.css('width', percentage + '%');
             }
 
-            var progress = setInterval(function() {
+            var progress = setInterval(function intervalUpdate() {
                 if (is_vertical) {
                     this_size = $this.height();
                     parent_size = $parent.height();
@@ -106,12 +106,13 @@
                 current_percentage = Math.round(100 * this_size / parent_size);
                 current_value = Math.round(aria_valuemin + this_size / parent_size * (aria_valuemax - aria_valuemin));
 
-                if (current_percentage >= percentage) {
+                if (intervalUpdate.prev_percentage === current_percentage) {
                     current_percentage = percentage;
                     current_value = data_transitiongoal;
                     done($this);
                     clearInterval(progress);
                 }
+                intervalUpdate.prev_percentage = current_percentage;
 
                 if (options.display_text !== 'none') {
                     text = options.use_percentage ? options.percent_format(current_percentage) : options.amount_format(current_value, aria_valuemax, aria_valuemin);
