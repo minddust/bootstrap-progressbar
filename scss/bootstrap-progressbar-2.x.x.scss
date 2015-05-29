@@ -1,5 +1,5 @@
-$progressbarVerticalWidth: $baseLineHeight;
-$progressbarFontSize: 12px;
+$progressbarVerticalWidth: $baseLineHeight !default;
+$progressbarFontSize: 12px !default;
 
 // bootstrap-progressbar global styles
 // -----------------------------------
