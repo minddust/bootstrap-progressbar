@@ -69,13 +69,7 @@
                 }); // normal resizing would brick the structure because width is in px
             }
             else {
-                parent_size = $parent.css('width');
-                $front_text.css({width: parent_size});
-
-                $(window).resize(function() {
-                    parent_size = $parent.css('width');
-                    $front_text.css({width: parent_size});
-                }); // normal resizing would brick the structure because width is in px
+                $front_text.css({textAlign: 'center'});
             }
         }
 
