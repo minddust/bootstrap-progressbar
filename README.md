@@ -25,6 +25,7 @@
 * Download the latest release: [v0.9.0](https://github.com/minddust/bootstrap-progressbar/archive/v0.9.0.zip)
 * Clone the repository: `git clone git@github.com:minddust/bootstrap-progressbar.git`
 * Install with [Bower](http://bower.io): `bower install bootstrap-progressbar`
+* Install with [npm](https://www.npmjs.com/package/bootstrap-progressbar): `npm install bootstrap-progressbar`
 
 
 ## Usage
