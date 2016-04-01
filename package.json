@@ -1,6 +1,7 @@
 {
   "name": "bootstrap-progressbar",
   "description": "progressbar interactions for twitter bootstrap 2 & 3",
+  "main": "bootstrap-progressbar.js",
   "homepage": "http://www.minddust.com",
   "license": "MIT",
   "version": "0.9.0",
